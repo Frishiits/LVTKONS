@@ -11,18 +11,18 @@
             </a>
           </div>
           <div class="u-custom-menu u-nav-container">
-            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-4-light-3 u-text-body-alt-color u-text-hover-custom-color-3" href="Home.php" style="padding: 10px 20px;">Sadala1</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-4-light-3 u-text-body-alt-color u-text-hover-custom-color-3" href="Home.php" style="padding: 10px 20px;">Sadala2</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-4-light-3 u-text-body-alt-color u-text-hover-custom-color-3" href="Home.php" style="padding: 10px 20px;">Sadala3</a>
+            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-4-light-3 u-text-body-alt-color u-text-hover-custom-color-3" href="Home.php" style="padding: 10px 20px;">Sākumlapa</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-4-light-3 u-text-body-alt-color u-text-hover-custom-color-3" href="Home.php" style="padding: 10px 20px;">Pieteikties</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-4-light-3 u-text-body-alt-color u-text-hover-custom-color-3" href="Home.php" style="padding: 10px 20px;">Informācija</a>
 </li></ul>
           </div>
           <div class="u-custom-menu u-nav-container-collapse">
             <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
               <div class="u-inner-container-layout u-sidenav-overflow">
                 <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.php">Sadala1</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.php">Sadala2</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.php">Sadala3</a>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.php">Sākumlapa</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.php">Pieteikties</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.php">Informācija</a>
 </li></ul>
               </div>
             </div>
