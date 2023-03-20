@@ -4,7 +4,7 @@ require_once("database.php");
 function Invalid_seasson($email)
 {
     if (!isset($_SESSION['t'])) {
-        header('location:login.php');
+        header('location:../login.php');
     }
     $admin = array(
         'daniels.vidopskis@sk.lvt.lv1',

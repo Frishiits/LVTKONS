@@ -18,8 +18,7 @@
   <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
   <body class="u-body u-xl-mode" data-lang="en">
     
-<?php
-session_start(); 
+<?php 
 include('header.php');
 ?>
     <section class="u-align-center u-clearfix u-gradient u-section-1" id="carousel_1d8f">
