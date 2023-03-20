@@ -25,7 +25,7 @@ include  ('header.php');
     <section class="u-align-center u-clearfix u-gradient u-section-1" id="carousel_1d8f">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-list u-list-1">
-          <h1>Sveiki,  <?=substr($_SESSION['username'], 0, -1); ?>!</h1>
+          <h2 class="u-align-left">Sveiki,  <?=substr($_SESSION['username'], 0, -1); ?>!</h2>
           <br>
           <div class="u-repeater u-repeater-1">
             <div class="u-align-center u-container-style u-list-item u-radius-20 u-repeater-item u-shape-round u-white u-list-item-1">

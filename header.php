@@ -1,7 +1,7 @@
 <?php
-include("backend/function.php")
-
-  ?>
+include("backend/function.php");
+MicrosoftInfo();
+?>
 
 
 <header class="u-clearfix u-custom-color-1 u-header u-header" id="sec-fe6d">
