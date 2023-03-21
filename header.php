@@ -1,7 +1,7 @@
 <?php
 include("backend/function.php");
 MicrosoftInfo();
-//Invalid_seasson($_SESSION['$email']);
+Invalid_seasson($_SESSION['email']);
 ?>
 
 
