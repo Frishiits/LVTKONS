@@ -32,6 +32,12 @@
         <h2 class="u-align-left">Sveiki,
           <?= substr($_SESSION['username'], 0, -1); ?>!
         </h2>
+        <?php
+        
+        ?>
+        <p class="u-text u-text-2"><span class="u-file-icon u-icon"><img src="images/3652191.png"
+              alt=""></span>&nbspNedēļas pārskats:</p>
+
         <br>
         <div class="u-repeater u-repeater-1">
           <div
@@ -69,9 +75,6 @@
             </div>
           </div>
         </div>
-        <p class="u-text u-text-2"><span class="u-file-icon u-icon"><img src="images/3652191.png"
-              alt=""></span>&nbspNedēļas pārskats:</p>
-
       </div>
     </div>
   </section>
