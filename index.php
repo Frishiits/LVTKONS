@@ -1,105 +1,83 @@
 <!DOCTYPE html>
-<html style="font-size: 16px;" lang="en"><head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <title>Konsultacijas</title>
-    <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="Home.css" media="screen">
-    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
-    <meta name="generator" content="Nicepage 5.6.13, nicepage.com">
-    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+<html style="font-size: 16px;" lang="en">
 
-    <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="Home">
-    <meta property="og:type" content="website">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
-  <body class="u-body u-xl-mode" data-lang="en">
-    
-<?php 
-include('header.php');
-?>
-    <section class="u-align-center u-clearfix u-gradient u-section-1" id="carousel_1d8f">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-list u-list-1">
-          <h2 class="u-align-left">Sveiki,  <?=substr($_SESSION['username'], 0, -1); ?>!</h2>
-          <br>
-          <div class="u-repeater u-repeater-1">
-            <div class="u-align-center u-container-style u-list-item u-radius-20 u-repeater-item u-shape-round u-white u-list-item-1">
-              <div class="u-container-layout u-similar-container u-container-layout-1">
-                <img src="images/users-with-speech-bubbles-vector_53876-82250.jpg" alt="" class="u-expanded-width u-image u-image-contain u-image-default u-image-1" data-image-width="626" data-image-height="625">
-                <h4 class="u-text u-text-default u-text-palette-1-base u-text-1">Konsultāciju saraksts</h4>
-                <a href="Konsultacija.php" class="u-active-palette-1-base u-border-2 u-border-active-white u-border-hover-white u-border-white u-btn u-btn-round u-button-style u-hover-palette-1-base u-palette-1-base u-radius-50 u-text-active-white u-text-hover-white u-btn-1">ATVĒRT</a>
-              </div>
-            </div>
-            <div class="u-align-center u-container-style u-list-item u-radius-20 u-repeater-item u-shape-round u-video-cover u-white u-list-item-2">
-              <div class="u-container-layout u-similar-container u-container-layout-2">
-                <img src="images/fdf.jpg" alt="" class="u-expanded-width u-image u-image-default u-image-2" data-image-width="626" data-image-height="625">
-                <h4 class="u-text u-text-default u-text-palette-1-base u-text-2">Pieteikties<br></h4>
-                <a href="pieteikties.php" class="u-active-palette-1-base u-border-2 u-border-active-white u-border-hover-white u-border-white u-btn u-btn-round u-button-style u-hover-palette-1-base u-palette-1-base u-radius-50 u-text-active-white u-text-hover-white u-btn-2" > ATVĒRT</a>
-              </div>
-            </div>
-            <div class="u-align-center u-container-style u-list-item u-radius-20 u-repeater-item u-shape-round u-video-cover u-white u-list-item-3">
-              <div class="u-container-layout u-similar-container u-container-layout-3">
-                <img src="images/dsds.jpg" alt="" class="u-expanded-width u-image u-image-contain u-image-default u-image-3" data-image-width="626" data-image-height="626">
-                <h4 class="u-text u-text-default u-text-palette-1-base u-text-3">Informācija</h4>
-                <a href="Info.php" class="u-active-palette-1-base u-border-2 u-border-active-white u-border-hover-white u-border-white u-btn u-btn-round u-button-style u-hover-palette-1-base u-palette-1-base u-radius-50 u-text-active-white u-text-hover-white u-btn-3"> ATVĒRT</a>
-              </div>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <title>Konsultacijas</title>
+  <link rel="stylesheet" href="nicepage.css" media="screen">
+  <link rel="stylesheet" href="Home.css" media="screen">
+  <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+  <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+  <meta name="generator" content="Nicepage 5.6.13, nicepage.com">
+  <link id="u-theme-google-font" rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+
+  <meta name="theme-color" content="#478ac9">
+  <meta property="og:title" content="Home">
+  <meta property="og:type" content="website">
+  <meta data-intl-tel-input-cdn-path="intlTelInput/">
+</head>
+
+<body class="u-body u-xl-mode" data-lang="en">
+
+  <?php
+  include('header.php');
+  ?>
+  <section class="u-align-center u-clearfix u-gradient u-section-1" id="carousel_1d8f">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div class="u-list u-list-1">
+        <h2 class="u-align-left">Sveiki,
+          <?= substr($_SESSION['username'], 0, -1); ?>!
+        </h2>
+        <br>
+        <div class="u-repeater u-repeater-1">
+          <div
+            class="u-align-center u-container-style u-list-item u-radius-20 u-repeater-item u-shape-round u-white u-list-item-1">
+            <div class="u-container-layout u-similar-container u-container-layout-1">
+              <img src="images/users-with-speech-bubbles-vector_53876-82250.jpg" alt=""
+                class="u-expanded-width u-image u-image-contain u-image-default u-image-1" data-image-width="626"
+                data-image-height="625">
+              <h4 class="u-text u-text-default u-text-palette-1-base u-text-1">Konsultāciju saraksts</h4>
+              <a href="Konsultacija.php"
+                class="u-active-palette-1-base u-border-2 u-border-active-white u-border-hover-white u-border-white u-btn u-btn-round u-button-style u-hover-palette-1-base u-palette-1-base u-radius-50 u-text-active-white u-text-hover-white u-btn-1">ATVĒRT</a>
             </div>
           </div>
-          <p class="u-text u-text-2"><span class="u-file-icon u-icon"><img src="images/3652191.png" alt=""></span>&nbspNedēļas pārskats:</p>
-          <table class="u-table-entity u-table-entity-1">
-          <colgroup>
-            <col width="20%">
-            <col width="20%">
-            <col width="20%">
-            <col width="20%">
-            <col width="20%">
-          </colgroup>
-          <tbody class="u-table-alt-palette-1-light-3 u-table-body">
-            <tr style="height: 45px;">
-              <td class="u-table-cell">Pirmdiena</td>
-              <td class="u-table-cell">Otrdiena</td>
-              <td class="u-table-cell">Trešdiena</td>
-              <td class="u-table-cell">Ceturtdiena</td>
-              <td class="u-table-cell">Piektdiena</td>
-            </tr>
-            <tr style="height: 65px;">
-              <td class="u-table-cell">Row 1</td>
-              <td class="u-table-cell"></td>
-              <td class="u-table-cell">Description</td>
-              <td class="u-table-cell">Description</td>
-              <td class="u-table-cell">Description</td>
-            </tr>
-            <tr style="height: 65px;">
-              <td class="u-table-cell">Row 2</td>
-              <td class="u-table-cell"></td>
-              <td class="u-table-cell">Description</td>
-              <td class="u-table-cell">Description</td>
-              <td class="u-table-cell">Description</td>
-            </tr>
-            <tr style="height: 65px;">
-              <td class="u-table-cell">Row 3</td>
-              <td class="u-table-cell"></td>
-              <td class="u-table-cell">Description</td>
-              <td class="u-table-cell">Description</td>
-              <td class="u-table-cell">Description</td>
-            </tr>
-            <tr style="height: 65px;">
-              <td class="u-table-cell">Row 4</td>
-              <td class="u-table-cell"></td>
-              <td class="u-table-cell">Description</td>
-              <td class="u-table-cell">Description</td>
-              <td class="u-table-cell">Description</td>
-            </tr>
-          </tbody>
-        </table>
+          <div
+            class="u-align-center u-container-style u-list-item u-radius-20 u-repeater-item u-shape-round u-video-cover u-white u-list-item-2">
+            <div class="u-container-layout u-similar-container u-container-layout-2">
+              <img src="images/fdf.jpg" alt="" class="u-expanded-width u-image u-image-default u-image-2"
+                data-image-width="626" data-image-height="625">
+              <h4 class="u-text u-text-default u-text-palette-1-base u-text-2">Pieteikties<br></h4>
+              <a href="pieteikties.php"
+                class="u-active-palette-1-base u-border-2 u-border-active-white u-border-hover-white u-border-white u-btn u-btn-round u-button-style u-hover-palette-1-base u-palette-1-base u-radius-50 u-text-active-white u-text-hover-white u-btn-2">
+                ATVĒRT</a>
+            </div>
+          </div>
+          <div
+            class="u-align-center u-container-style u-list-item u-radius-20 u-repeater-item u-shape-round u-video-cover u-white u-list-item-3">
+            <div class="u-container-layout u-similar-container u-container-layout-3">
+              <img src="images/dsds.jpg" alt=""
+                class="u-expanded-width u-image u-image-contain u-image-default u-image-3" data-image-width="626"
+                data-image-height="626">
+              <h4 class="u-text u-text-default u-text-palette-1-base u-text-3">Informācija</h4>
+              <a href="Info.php"
+                class="u-active-palette-1-base u-border-2 u-border-active-white u-border-hover-white u-border-white u-btn u-btn-round u-button-style u-hover-palette-1-base u-palette-1-base u-radius-50 u-text-active-white u-text-hover-white u-btn-3">
+                ATVĒRT</a>
+            </div>
+          </div>
         </div>
+        <p class="u-text u-text-2"><span class="u-file-icon u-icon"><img src="images/3652191.png"
+              alt=""></span>&nbspNedēļas pārskats:</p>
+
       </div>
-    </section>
-<?php 
-include('footer.php');
-?> 
-</body></html>
+    </div>
+  </section>
+  <?php
+  include('footer.php');
+  ?>
+</body>
+
+</html>
