@@ -37,6 +37,7 @@
         </h2>
         <?php
         echo '<div class="same-line">';
+        
         echo '<div class="alert alert-warning" role="alert">';
         echo ' <p class="u-text u-align-left" ><span class="u-file-icon u-icon"><img
           src="images/3652191.png" alt=""></span>&nbspNedēļas pārskats: <br> EU KAS NOTIEK?</p>';
