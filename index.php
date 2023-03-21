@@ -49,15 +49,57 @@ include('header.php');
               </div>
             </div>
           </div>
+          <p class="u-text u-text-2"><span class="u-file-icon u-icon"><img src="images/3652191.png" alt=""></span>&nbspNedēļas pārskats:</p>
+          <table class="u-table-entity u-table-entity-1">
+          <colgroup>
+            <col width="20%">
+            <col width="20%">
+            <col width="20%">
+            <col width="20%">
+            <col width="20%">
+          </colgroup>
+          <tbody class="u-table-alt-palette-1-light-3 u-table-body">
+            <tr style="height: 45px;">
+              <td class="u-table-cell">Pirmdiena</td>
+              <td class="u-table-cell">Otrdiena</td>
+              <td class="u-table-cell">Trešdiena</td>
+              <td class="u-table-cell">Ceturtdiena</td>
+              <td class="u-table-cell">Piektdiena</td>
+            </tr>
+            <tr style="height: 65px;">
+              <td class="u-table-cell">Row 1</td>
+              <td class="u-table-cell"></td>
+              <td class="u-table-cell">Description</td>
+              <td class="u-table-cell">Description</td>
+              <td class="u-table-cell">Description</td>
+            </tr>
+            <tr style="height: 65px;">
+              <td class="u-table-cell">Row 2</td>
+              <td class="u-table-cell"></td>
+              <td class="u-table-cell">Description</td>
+              <td class="u-table-cell">Description</td>
+              <td class="u-table-cell">Description</td>
+            </tr>
+            <tr style="height: 65px;">
+              <td class="u-table-cell">Row 3</td>
+              <td class="u-table-cell"></td>
+              <td class="u-table-cell">Description</td>
+              <td class="u-table-cell">Description</td>
+              <td class="u-table-cell">Description</td>
+            </tr>
+            <tr style="height: 65px;">
+              <td class="u-table-cell">Row 4</td>
+              <td class="u-table-cell"></td>
+              <td class="u-table-cell">Description</td>
+              <td class="u-table-cell">Description</td>
+              <td class="u-table-cell">Description</td>
+            </tr>
+          </tbody>
+        </table>
         </div>
       </div>
     </section>
-    
-    
-    <?php 
+<?php 
 include('footer.php');
-?>
-
-
-  
+?> 
 </body></html>
