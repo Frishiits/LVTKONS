@@ -7,7 +7,7 @@ MicrosoftInfo();
 
 <header class="u-clearfix u-custom-color-1 u-header u-header" id="sec-fe6d">
   <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-sheet-1">
-    <a href="Home.php" class="u-image u-logo u-image-1" data-image-width="198" data-image-height="50">
+    <a href="index.php" class="u-image u-logo u-image-1" data-image-width="198" data-image-height="50">
       <img src="images/logo_new_balts.png" class="u-logo-image u-logo-image-1">
     </a>
     <nav class="u-menu u-menu-one-level u-menu-open-right u-offcanvas u-menu-1" data-responsive-from="MD"
@@ -35,11 +35,11 @@ MicrosoftInfo();
           </li>
           <li class="u-nav-item"><a
               class="u-button-style u-nav-link u-text-active-palette-4-light-3 u-text-body-alt-color u-text-hover-custom-color-3"
-              href="Home.php" style="padding: 10px 20px;">Pieteikties</a>
+              href="pieteikties.php" style="padding: 10px 20px;">Pieteikties</a>
           </li>
           <li class="u-nav-item"><a
               class="u-button-style u-nav-link u-text-active-palette-4-light-3 u-text-body-alt-color u-text-hover-custom-color-3"
-              href="Home.php" style="padding: 10px 20px;">Informācija</a>
+              href="info.php" style="padding: 10px 20px;">Informācija</a>
           </li>
         </ul>
       </div>
