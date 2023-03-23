@@ -38,7 +38,7 @@ MicrosoftInfo();
           </li>
           <li class="u-nav-item"><a
               class="u-button-style u-nav-link u-text-active-palette-4-light-3 u-text-body-alt-color u-text-hover-custom-color-3"
-              href="info.php" style="padding: 10px 20px;">Informācija</a>
+              href="Info.php" style="padding: 10px 20px;">Informācija</a>
           </li>
         </ul>
       </div>
