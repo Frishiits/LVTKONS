@@ -47,8 +47,12 @@
 </select>
   </div>
   <div class="col-12">
-    <label for="inputAddress" class="form-label">Iela</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="">
+  <select name="" id="Opcija" class="form-select" aria-label="Default select example" placeholder="Apartment, studio, or floor">
+  <option selected>Open this select menu</option>
+  <option value="1">One</option>
+  <option value="2">Two</option>
+  <option value="3">Three</option>
+</select>
   </div>
   <div class="col-12">
     <label for="inputAddress2" class="form-label">Address 2</label>
