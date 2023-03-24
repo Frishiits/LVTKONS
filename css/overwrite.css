@@ -13,4 +13,55 @@ p.u-text.u-align-left {
   grid-template-columns: repeat(auto-fit, minmax(150px, 30rem));
   grid-gap: 7px;
 }
+.card-line {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 13rem));
+  grid-gap: 7px;
+  justify-content: center;
+}
+.card {
+ border: 1px solid black;
+ margin: 10px;
+ cursor: pointer; /* add a pointer cursor to indicate interactivity */
+}
+a {
+  text-decoration: none;
+  color: #0676a4;
+}
+.card:hover h2 {
+  color: #3370ac;
+  font-weight: bold!important;
+}
+h2 {
+  font-size: 2rem!important;
+}
+section#sec-b1bc {
+  margin-bottom: 2rem;
+}
+#search-bar {
+  display: inline-block;
+  margin-left: 20px;
+  padding: 5px 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 16px;
+}
 
+#search-bar {
+  display: inline-block;
+  /* margin-left: 20px; */
+  padding: 5px 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 67%;
+}
+
+#search-button:hover {
+  background-color: #0069d9;
+}
+@media (max-width: 600px) {
+  .card-line {
+    display: block;
+}
+}

@@ -6,11 +6,12 @@
     <meta name="description" content="">
     <title>Konsultacija</title>
     <link rel="stylesheet" href="nicepage.css" media="screen">
-    <link rel="stylesheet" href="Konsultacija.css" media="screen">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/overwrite.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 5.6.13, nicepage.com">
-    
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
 
     <meta name="theme-color" content="#478ac9">
@@ -22,8 +23,33 @@
   include('header.php');
   ?>
     <section class="u-align-center u-clearfix u-section-1" id="sec-b1bc">
-      <p>CARDS HERE</p>
       <div class="u-clearfix u-sheet u-sheet-1">
+      <form>
+      <input type="text" placeholder="Search..." id="search-bar" />
+      <button type="submit" id="search-button">Search</button>
+    </form>
+      <div class="card-line">
+    <a href="#">
+      <div class="card">
+        <h2>Pirmdiena</h2>
+      </div>
+    </a>
+    <a href="#">
+      <div class="card">
+        <h2>Otrdiena</h2>
+      </div>
+    </a>
+    <a href="#">
+      <div class="card">
+        <h2>Trešdiena</h2>
+      </div>
+    </a>
+    <a href="#">
+      <div class="card">
+        <h2>Ceturtdiena</h2>
+      </div>
+    </a>
+</div>
         <div class="u-table u-table-responsive u-table-1">
           <table class="u-table-entity">
             <thead class="u-align-left u-custom-font u-palette-1-base u-table-header u-text-font u-table-header-1">
