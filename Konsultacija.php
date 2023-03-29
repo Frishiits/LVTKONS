@@ -109,6 +109,10 @@
             </tr>
           </tbody>
         </table>
+       <!--
+        //TODO: Either change style of them or make them more UI friendly
+        //Phone view only 
+        -->
         <div class="card">
           <h1>Skolotajs 2</h1>
           <p class="text-justify"> Otrdiena 16:00-17:00</p>
