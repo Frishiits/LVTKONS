@@ -10,13 +10,16 @@
   <link rel="stylesheet" href="nicepage.css" media="screen">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+
+
   <link rel="stylesheet" href="css/overwrite.css" media="screen">
-  <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
   <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
   <meta name="generator" content="Nicepage 5.6.13, nicepage.com">
   <link id="u-theme-google-font" rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-
+  <link href="css/mobiscroll.jquery.min.css" rel="stylesheet" />
+  <script src="js/mobiscroll.jquery.min.js"></script>
   <meta name="theme-color" content="#478ac9">
   <meta property="og:title" content="Konsultacija">
   <meta property="og:type" content="website">
@@ -106,7 +109,15 @@
             </tr>
           </tbody>
         </table>
+        <div class="card">
+          <h1>Skolotajs 2</h1>
+          <p class="text-justify"> Otrdiena 16:00-17:00</p>
+          <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
+          <p class="text-justify"> Trešdiena 16:00-17:00</p>
+          <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
+        </div>
       </div>
+
     </div>
   </section>
   <section class="u-clearfix u-section-2" id="sec-e338">

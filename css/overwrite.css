@@ -24,6 +24,12 @@ p.u-text.u-align-left {
  margin: 10px;
  cursor: pointer; /* add a pointer cursor to indicate interactivity */
 }
+
+
+.card-info {
+  border: 1px solid black;
+  margin: 10px;
+}
 a {
   text-decoration: none;
   color: #0676a4;
