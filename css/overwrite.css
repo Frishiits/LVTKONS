@@ -66,3 +66,9 @@ section#sec-b1bc {
     display: block;
 }
 }
+
+@media only screen and (max-width: 900px) {
+  .mobile-hide{
+      display: none;
+  }
+}
