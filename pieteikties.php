@@ -30,56 +30,33 @@
   include('header.php');
   ?>
 
-<div class="container">
-      <h1 class="form-title">Pieteikties</h1>
-      <form action="#">
-        <div class="main-user-info">
-          <div class="user-input-box">
-            <label for="fullName">Vārds</label>
-            <input type="text"
-                    id="fullName"
-                    name="fullName"
-                    placeholder="Ievadi savu vārdu"/>
-          </div>
-          <div class="user-input-box">
-            <label for="username">Uzvārds</label>
-            <input type="text"
-                    id="username"
-                    name="username"
-                    placeholder="Ievadi savu uzvārdu"/>
-          </div>
-          <select class="user-input-box">
-          <label for="iela">Izvēlies ielu</label>
-             <option id="iela" selected>Izvēlies ielu</option>
-               <option value="1">Ventspils iela</option>
-               <option value="2">Vānes iela</option>
-          </select>
+<form>
+  <label for="input1">Vārds:</label>
+  <input type="text" id="input1" name="input1"><br><br>
+  
+  <label for="input2">Uzvārds:</label>
+  <input type="text" id="input2" name="input2"><br><br>
+  
+  <label for="dropdown1">Izvēlies ielu:</label>
+  <select id="dropdown1" name="dropdown1">
+    <option selected>Izvēlies ielu</option>
+    <option value="option2">Ventspils iela</option>
+    <option value="option3">Vānes iela</option>
+  </select><br><br>
+  
+  <label for="dropdown2">Ko tu darīsi:</label>
+  <select id="dropdown2" name="dropdown2">
+  <option selected>Izvēlies ko tu darīsi</option>
+    <option value="optionB">Labošu vērtējumu</option>
+    <option value="optionC">Mācīties</option>
+  </select><br><br>
+  
+  <input type="submit" value="Submit">
+</form>
 
-          <select class="kodaris">
-          <label for="iela">Ko darīsi</label>
-             <option id="iela" selected>Izvēlies ko darīsi</option>
-               <option value="1">Labošu vērtējumu</option>
-               <option value="2">Mācīšos</option>
-          </select>
-          <div class="kodaris">
-            <label for="password">Mācība</label>
-            <input type="password"
-                    id="password"
-                    name="password"
-                    placeholder="Izvēlies mācību"/>
-          </div>
-          <div class="user-input-box">
-            <label for="confirmPassword">Pie kāda skolotāja/as</label>
-            <input type="password"
-                    id="confirmPassword"
-                    name="confirmPassword"
-                    placeholder="Izvēlies skolotāju"/>
-          </div>
-        </div>
-        <div class="form-submit-btn">
-          <input type="submit" value="Pieteikties">
-        </div>
-      </form>
+<?php
+  include('footer.php');
+  ?>
 
   </body>
 </html>
