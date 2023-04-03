@@ -48,21 +48,20 @@
                     name="username"
                     placeholder="Ievadi savu uzvārdu"/>
           </div>
-          <div class="user-input-box">
-            <label for="email">Izvēlies ielu</label>
-            <input type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Izvēlies ielu"/>
-          </div>
-          <div class="user-input-box">
-            <label for="phoneNumber">Ko darīsi</label>
-            <input type="text"
-                    id="phoneNumber"
-                    name="phoneNumber"
-                    placeholder="Izvēlies ko darīsi"/>
-          </div>
-          <div class="user-input-box">
+          <select class="user-input-box">
+          <label for="iela">Izvēlies ielu</label>
+             <option id="iela" selected>Izvēlies ielu</option>
+               <option value="1">Ventspils iela</option>
+               <option value="2">Vānes iela</option>
+          </select>
+
+          <select class="kodaris">
+          <label for="iela">Ko darīsi</label>
+             <option id="iela" selected>Izvēlies ko darīsi</option>
+               <option value="1">Labošu vērtējumu</option>
+               <option value="2">Mācīšos</option>
+          </select>
+          <div class="kodaris">
             <label for="password">Mācība</label>
             <input type="password"
                     id="password"
