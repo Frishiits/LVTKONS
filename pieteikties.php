@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <title>Konsultacijas</title>
   <link rel="stylesheet" href="nicepage.css" media="screen">
-  <link rel="stylesheet" href="Home.css" media="screen">
+  <link rel="stylesheet" href="pieteikties.css" media="screen">
   <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
   <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
   <meta name="generator" content="Nicepage 5.6.13, nicepage.com">
@@ -30,62 +30,57 @@
   include('header.php');
   ?>
 
-<form class="row g-3">
-  <div class="col-md-6">
-    <label for="inputEmail4" class="form-label">Tēma?</label>
-    <input type="email" class="form-control" id="inputEmail4">
-  </div>
-  <label for="Opcija">Izvēlies dienu</label>
-  <div class="col-md-6">
-  <select name="Diena" id="Opcija" class="form-select" aria-label="Default select example">
-  <option selected>Izvēlies dienu kurā vēlies doties uz konsultācijām</option>
-  <option value="1">Pirmdiena</option>
-  <option value="2">Otrdiena</option>
-  <option value="3">Trešdiena</option>
-  <option value="4">Ceturtdiena</option>
-  <option value="5">Piektdiena</option>
-</select>
-  </div>
-  <div class="col-12">
-  <select name="" id="Opcija" class="form-select" aria-label="Default select example" placeholder="Apartment, studio, or floor">
-  <option selected>Open this select menu</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</select>
-  </div>
-  <div class="col-12">
-    <label for="inputAddress2" class="form-label">Address 2</label>
-    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-  </div>
-  <div class="col-md-6">
-    <label for="inputCity" class="form-label">City</label>
-    <input type="text" class="form-control" id="inputCity">
-  </div>
-  <div class="col-md-4">
-    <label for="inputState" class="form-label">State</label>
-    <select id="inputState" class="form-select">
-      <option selected>Choose...</option>
-      <option>...</option>
-    </select>
-  </div>
-  <div class="col-md-2">
-    <label for="inputZip" class="form-label">Zip</label>
-    <input type="text" class="form-control" id="inputZip">
-  </div>
-  <div class="col-12">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Check me out
-      </label>
-    </div>
-  </div>
-  <div class="col-12">
-    <button type="submit" class="btn btn-primary">Sign in</button>
-  </div>
-</form>
+<div class="container">
+      <h1 class="form-title">Pieteikties</h1>
+      <form action="#">
+        <div class="main-user-info">
+          <div class="user-input-box">
+            <label for="fullName">Vārds</label>
+            <input type="text"
+                    id="fullName"
+                    name="fullName"
+                    placeholder="Ievadi savu vārdu"/>
+          </div>
+          <div class="user-input-box">
+            <label for="username">Uzvārds</label>
+            <input type="text"
+                    id="username"
+                    name="username"
+                    placeholder="Ievadi savu uzvārdu"/>
+          </div>
+          <div class="user-input-box">
+            <label for="email">Izvēlies ielu</label>
+            <input type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Izvēlies ielu"/>
+          </div>
+          <div class="user-input-box">
+            <label for="phoneNumber">Ko darīsi</label>
+            <input type="text"
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    placeholder="Izvēlies ko darīsi"/>
+          </div>
+          <div class="user-input-box">
+            <label for="password">Mācība</label>
+            <input type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Izvēlies mācību"/>
+          </div>
+          <div class="user-input-box">
+            <label for="confirmPassword">Pie kāda skolotāja/as</label>
+            <input type="password"
+                    id="confirmPassword"
+                    name="confirmPassword"
+                    placeholder="Izvēlies skolotāju"/>
+          </div>
+        </div>
+        <div class="form-submit-btn">
+          <input type="submit" value="Pieteikties">
+        </div>
+      </form>
 
-<?php
-  include('footer.php');
-  ?>
+  </body>
+</html>
