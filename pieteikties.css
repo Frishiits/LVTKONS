@@ -64,9 +64,56 @@ input[type="text"] {
     left: 0;
     width: 100%;
     color: white;
-    padding: 10px;
+    padding:auto;
     text-align: center;
+    margin: auto;
+    visibility: hidden;
   }
+
+  .calendar {
+    max-width: 400px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    margin-top: 20px;
+  }
+  
+  .month {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ddd;
+    padding: 10px;
+    font-size: 20px;
+  }
+  
+  .prev,
+  .next {
+    cursor: pointer;
+  }
+  
+  .days {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .days div {
+    width: calc(100% / 7);
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .days div:hover {
+    background-color: #eee;
+  }
+  
+  .today {
+    background-color: #4CAF50;
+    color: white;
+  }
+
 
   @media (max-width: 768px) {
     .form-field input,
