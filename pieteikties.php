@@ -51,8 +51,25 @@
     <option value="optionC">Mācīties</option>
   </select><br><br>
   
-  <input type="submit" value="Submit">
+  <button type="button" class="decline" onclick="confirmDecline()">Atcelt</button>
+  <button type="submit" class="submit" onclick="confirmSubmit()">Pieteikties</button>
 </form>
+
+
+<script>
+    function confirmSubmit() {
+      if (confirm("Vai tiešām informācija ir ievadīta pareizi?")) {
+        // Submit the form
+        document.querySelector('form').submit();
+      }
+    }
+
+    function confirmDecline() {
+      if (confirm("Vai tiešām vēlies atcelt?")) {
+        // Handle decline
+      }
+    }
+  </script>
 
 <?php
   include('footer.php');

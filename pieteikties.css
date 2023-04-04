@@ -8,6 +8,7 @@ form {
   background-color: #FFFFFF; /* set the background color of the form */
   padding: 20px; /* add some padding to the form */
   border-radius: 5px; /* round the corners of the form */
+  margin-top: 4rem;
 }
 
 label {
@@ -24,13 +25,60 @@ input[type="text"] {
   box-sizing: border-box; /* make sure the border is included in the element's width */
 }
 
-input[type="submit"] {
-    display: block; /* put the submit button on a new line */
-    margin: auto; /* center the submit button horizontally */
-    background-color: #4CAF50; /* set the background color of the submit button */
-    color: white; /* set the text color of the submit button */
-    padding: 10px; /* add some padding to the submit button */
-    border: none; /* remove the border from the submit button */
-    border-radius: 3px; /* round the corners of the submit button */
-    cursor: pointer; /* add a pointer cursor to the submit button */
+#form-buttons {
+  text-align: center;
+}
+
+#form-buttons button {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin: 0 10px;
+}
+
+.decline {
+  background-color: red;
+  margin-right: 10px;
+  text-align: center;
+  color: #fff;
+  margin-left: 23.5rem;
+  border-radius: 0.8rem;
+  font-size: 1.25rem;
+}
+
+.submit {
+  background-color: green;
+  margin-right: 10px;
+  text-align: center;
+    color: #fff;
+    margin: auto;
+    border-radius: 0.8rem;
+    font-size: 1.25rem;
+}
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .form-field input,
+    .form-field select {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    #form-buttons button {
+      width: 100%;
+      margin: 0;
+      margin-bottom: 10px;
+    }
   }
