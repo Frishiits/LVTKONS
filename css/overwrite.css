@@ -22,6 +22,7 @@ p.u-text.u-align-left {
 .card {
  border: 1px solid black;
  margin: 10px;
+ margin-left: 10%;
  cursor: pointer; /* add a pointer cursor to indicate interactivity */
 }
 
@@ -75,6 +76,11 @@ section#sec-b1bc {
 
 @media only screen and (max-width: 900px) {
   .mobile-hide{
+      display: none;
+  }
+}
+@media only screen and (min-width: 901px) {
+  .mobile-show{
       display: none;
   }
 }
