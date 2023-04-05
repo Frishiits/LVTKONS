@@ -20,9 +20,6 @@
     href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
   <link href="css/mobiscroll.jquery.min.css" rel="stylesheet" />
   <script src="js/mobiscroll.jquery.min.js"></script>
-  <meta name="theme-color" content="#478ac9">
-  <meta property="og:title" content="Konsultacija">
-  <meta property="og:type" content="website">
   <meta data-intl-tel-input-cdn-path="intlTelInput/">
 </head>
 
