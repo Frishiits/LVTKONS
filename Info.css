@@ -1,4 +1,15 @@
- .u-section-1 {
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  padding:auto;
+  text-align: center;
+  margin: auto;
+}
+
+.u-section-1 {
   background-image: none;
 }
 
