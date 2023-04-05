@@ -66,7 +66,8 @@ input[type="text"] {
     color: white;
     padding:auto;
     text-align: center;
-    margin: auto;
+    margin-top: 50px;
+    visibility: hidden;
   }
 
   .calendar {

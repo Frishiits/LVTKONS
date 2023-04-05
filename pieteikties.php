@@ -80,7 +80,7 @@
     }
   </script>
 
-  <script>const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  <script>const months = ['Janvāris', 'Februāris', 'Marts', 'Aprīlis', 'Maijs', 'Jūnijs', 'Jūlijs', 'Augusts', 'Septembris', 'Octobris', 'Novembris', 'Decembris'];
 
 const calendar = document.querySelector('.calendar');
 const monthName = calendar.querySelector('.month-name');
