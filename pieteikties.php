@@ -26,46 +26,46 @@
 
 <body class="u-body u-xl-mode" data-lang="en">
 
-<?php
+  <?php
   include('header.php');
   ?>
 
-<form>
-  <label for="input1">Vārds:</label>
-  <input type="text" id="input1" name="input1"><br><br>
-  
-  <label for="input2">Uzvārds:</label>
-  <input type="text" id="input2" name="input2"><br><br>
-  
-  <label for="dropdown1">Izvēlies ielu:</label>
-  <select id="dropdown1" name="dropdown1">
-    <option selected>Izvēlies ielu</option>
-    <option value="option2">Ventspils iela</option>
-    <option value="option3">Vānes iela</option>
-  </select><br><br>
-  
-  <label for="dropdown2">Ko tu darīsi:</label>
-  <select id="dropdown2" name="dropdown2">
-  <option selected>Izvēlies ko tu darīsi</option>
-    <option value="optionB">Labošu vērtējumu</option>
-    <option value="optionC">Mācīties</option>
-  </select><br><br>
-  
-  <button type="button" class="decline" onclick="confirmDecline()">Atcelt</button>
-  <button type="submit" class="submit" onclick="confirmSubmit()">Pieteikties</button>
+  <form>
+    <label for="input1">Vārds:</label>
+    <input type="text" id="input1" name="input1"><br><br>
 
-  <div class="calendar">
-  <div class="month">
-    <div class="prev">&#10094;</div>
-    <div class="next">&#10095;</div>
-    <div class="month-name"></div>
-  </div>
-  <div class="days"></div>
-</div>
-</form>
+    <label for="input2">Uzvārds:</label>
+    <input type="text" id="input2" name="input2"><br><br>
+
+    <label for="dropdown1">Izvēlies ielu:</label>
+    <select id="dropdown1" name="dropdown1">
+      <option selected>Izvēlies ielu</option>
+      <option value="option2">Ventspils iela</option>
+      <option value="option3">Vānes iela</option>
+    </select><br><br>
+
+    <label for="dropdown2">Ko tu darīsi:</label>
+    <select id="dropdown2" name="dropdown2">
+      <option selected>Izvēlies ko tu darīsi</option>
+      <option value="optionB">Labošu vērtējumu</option>
+      <option value="optionC">Mācīties</option>
+    </select><br><br>
+
+    <button type="button" class="decline" onclick="confirmDecline()">Atcelt</button>
+    <button type="submit" class="submit" onclick="confirmSubmit()">Pieteikties</button>
+
+    <div class="calendar">
+      <div class="month">
+        <div class="prev">&#10094;</div>
+        <div class="next">&#10095;</div>
+        <div class="month-name"></div>
+      </div>
+      <div class="days"></div>
+    </div>
+  </form>
 
 
-<script>
+  <script>
     function confirmSubmit() {
       if (confirm("Vai tiešām informācija ir ievadīta pareizi?")) {
         // Submit the form
@@ -82,69 +82,70 @@
 
   <script>const months = ['Janvāris', 'Februāris', 'Marts', 'Aprīlis', 'Maijs', 'Jūnijs', 'Jūlijs', 'Augusts', 'Septembris', 'Octobris', 'Novembris', 'Decembris'];
 
-const calendar = document.querySelector('.calendar');
-const monthName = calendar.querySelector('.month-name');
-const daysContainer = calendar.querySelector('.days');
+    const calendar = document.querySelector('.calendar');
+    const monthName = calendar.querySelector('.month-name');
+    const daysContainer = calendar.querySelector('.days');
 
-let currentDate = new Date();
+    let currentDate = new Date();
 
-function updateCalendar() {
-  // Clear the old days
-  daysContainer.innerHTML = '';
+    function updateCalendar() {
+      // Clear the old days
+      daysContainer.innerHTML = '';
 
-  // Get the year and month
-  const year = currentDate.getFullYear();
-  const month = currentDate.getMonth();
+      // Get the year and month
+      const year = currentDate.getFullYear();
+      const month = currentDate.getMonth();
 
-  // Set the month name
-  monthName.textContent = months[month] + ' ' + year;
+      // Set the month name
+      monthName.textContent = months[month] + ' ' + year;
 
-  // Get the number of days in the month
-  const numDays = new Date(year, month + 1, 0).getDate();
+      // Get the number of days in the month
+      const numDays = new Date(year, month + 1, 0).getDate();
 
-  // Get the first day of the month
-  const firstDay = new Date(year, month, 1).getDay();
+      // Get the first day of the month
+      const firstDay = new Date(year, month, 1).getDay();
 
-  // Create the empty cells for the days before the 1st of the month
-  for (let i = 0; i < firstDay; i++) {
-    const cell = document.createElement('div');
-    daysContainer.appendChild(cell);
-  }
+      // Create the empty cells for the days before the 1st of the month
+      for (let i = 0; i < firstDay; i++) {
+        const cell = document.createElement('div');
+        daysContainer.appendChild(cell);
+      }
 
-  // Create the cells for the days of the month
-  for (let i = 1; i <= numDays; i++) {
-    const cell = document.createElement('div');
-    cell.textContent = i;
-    if (i === currentDate.getDate() && month === currentDate.getMonth() && year === currentDate.getFullYear()) {
-      cell.classList.add('today');
+      // Create the cells for the days of the month
+      for (let i = 1; i <= numDays; i++) {
+        const cell = document.createElement('div');
+        cell.textContent = i;
+        if (i === currentDate.getDate() && month === currentDate.getMonth() && year === currentDate.getFullYear()) {
+          cell.classList.add('today');
+        }
+        daysContainer.appendChild(cell);
+      }
     }
-    daysContainer.appendChild(cell);
-  }
-}
 
-updateCalendar();
+    updateCalendar();
 
-calendar.querySelector('.prev').addEventListener('click', () => {
-  currentDate.setMonth(currentDate.getMonth() - 1);
-  updateCalendar();
-});
+    calendar.querySelector('.prev').addEventListener('click', () => {
+      currentDate.setMonth(currentDate.getMonth() - 1);
+      updateCalendar();
+    });
 
-calendar.querySelector('.next').addEventListener('click', () => {
-  currentDate.setMonth(currentDate.getMonth() + 1);
-  updateCalendar();
-});
+    calendar.querySelector('.next').addEventListener('click', () => {
+      currentDate.setMonth(currentDate.getMonth() + 1);
+      updateCalendar();
+    });
 
-daysContainer.addEventListener('click', (event) => {
-  const cell = event.target;
-  if (!cell.textContent) {
-    return;
-  }
-  alert(`You clicked on ${cell.textContent} ${months[currentDate.getMonth()]} ${currentDate.getFullYear()}`);
-});</script>
+    daysContainer.addEventListener('click', (event) => {
+      const cell = event.target;
+      if (!cell.textContent) {
+        return;
+      }
+      alert(`You clicked on ${cell.textContent} ${months[currentDate.getMonth()]} ${currentDate.getFullYear()}`);
+    });</script>
 
-<?php
+  <?php
   include('footer.php');
   ?>
 
-  </body>
+</body>
+
 </html>
