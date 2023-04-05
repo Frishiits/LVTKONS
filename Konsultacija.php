@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="en">
-
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
@@ -8,9 +7,6 @@
   <link rel="stylesheet" href="nicepage.css" media="screen">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-
-
-
   <link rel="stylesheet" href="css/overwrite.css" media="screen">
   <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
   <link id="u-theme-google-font" rel="stylesheet"
@@ -23,7 +19,7 @@
   <?php
   include('header.php');
   ?>
-  <section class="u-align-center u-clearfix u-section-1" id="sec-b1bc">
+  <section class="u-align-center u-clearfix u-section-1">
     <div class="u-clearfix u-sheet u-sheet-1">
       <form>
         <input type="text" placeholder="Search..." id="search-bar" />
@@ -51,8 +47,8 @@
           </div>
         </a>
       </div>
-      <div class="u-table u-table-responsive u-table-1">
-        <table class="u-table-entity mobile-hide">
+      <div class="u-table u-table-responsive u-table-1 mobile-hide">
+        <table class="u-table-entity">
           <thead class="u-align-left u-custom-font u-palette-1-base u-table-header u-text-font u-table-header-1">
             <tr style="height: 56px;">
               <th class="u-align-center u-border-3 u-border-grey-dark-1 u-table-cell u-table-cell-1">Vards Uzvārds</th>
