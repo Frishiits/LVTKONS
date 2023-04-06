@@ -4,7 +4,24 @@ require_once("database.php");
 function Invalid_seasson($email)
 {
     if (!isset($_SESSION['t'])) {
-        header('location:../login.php');
+        session_start();
+        $_SESSION['state']=session_id();
+        $env = parse_ini_file('.env');
+
+        $login_url ="https://login.microsoftonline.com/".$env['tenant']."/oauth2/v2.0/authorize";
+        $client_id = $env['client_id'];
+        $client_secret = $env['client_secret'];
+        $callback = $env['callback'];
+        $scopes = ["https://graph.microsoft.com/.default","offline_access"];
+        $params = array ('client_id' =>$client_id,
+                'redirect_uri' => $callback,
+                'response_type' =>'token',
+                'response_mode' =>'form_post',
+                'scope' => "https://graph.microsoft.com/User.Read",
+                'state' =>$_SESSION['state']);
+        header ('Location: '.$login_url.'?'.http_build_query ($params));
+
+        
     }
     $admin = array(
         'daniels.vidopskis@sk.lvt.lv1',
@@ -20,10 +37,6 @@ function MicrosoftInfo()
 
     $env = parse_ini_file('.env');
     session_start();
-
-    $tenant = $env['tenant'];
-    $client_id = $env['client_id'];
-    $client_secret = $env['client_secret'];
     $callback = $env['callback'];
 
     if (array_key_exists('access_token', $_POST)) {
