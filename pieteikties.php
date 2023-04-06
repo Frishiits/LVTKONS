@@ -30,12 +30,14 @@
   include('header.php');
   ?>
 
-  <form>
+  <form method="Post">
+    <!--
+      Varam dabuut no azure DB
     <label for="input1">Vārds:</label>
     <input type="text" id="input1" name="input1"><br><br>
 
     <label for="input2">Uzvārds:</label>
-    <input type="text" id="input2" name="input2"><br><br>
+    <input type="text" id="input2" name="input2"><br><br> !-->
 
     <label for="dropdown1">Izvēlies ielu:</label>
     <select id="dropdown1" name="dropdown1">
