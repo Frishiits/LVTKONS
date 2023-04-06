@@ -26,6 +26,9 @@ p.u-text.u-align-left {
  cursor: pointer; /* add a pointer cursor to indicate interactivity */
 }
 
+.li {
+  color: white;
+}
 
 .card-info {
   border: 1px solid black;
