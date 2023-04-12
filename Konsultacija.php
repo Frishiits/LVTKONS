@@ -14,8 +14,8 @@
     href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
   <link href="css/mobiscroll.jquery.min.css" rel="stylesheet" />
   <script src="js/mobiscroll.jquery.min.js"></script>
-  
-  
+
+
 </head>
 
 <body class="u-body u-xl-mode" data-lang="en">
@@ -24,11 +24,35 @@
   ?>
   <section class="u-align-center u-clearfix u-section-1">
     <div class="u-clearfix u-sheet u-sheet-1">
-      <form>
-        <input type="text" placeholder="Search..." id="search-bar" />
+      <form method="Post" onsubmit="event.preventDefault(); searchAndHide()">
+        <input type="text" autocomplete="off" placeholder="Meklēt skolotāju" name="search-bar" id="search-bar" />
         <button type="submit" id="search-button">Search</button>
+        <?php
+        if (isset($_POST['searchbar']))
+          $keyword = $_POST['searchbar'];
+
+
+
+        ?>
+
+        <script>
+          function searchAndHide() {
+            var searchInput = document.getElementById("search-bar").value;
+            var element1 = document.getElementById("cardhide");
+            var element = document.getElementById("tablehide");
+            var seachview = document.getElementById("SearchView");
+            // Search logic - you can modify this to suit your needs
+            if (searchInput !== "") {
+              element1.style.display = "none"; // Hiding the result element
+              element.style.display = "none"; // Hiding the result element
+              seachview.style.display = "flex";
+            } else {
+             // resultElement.style.display = "block"; // Showing the result element
+            }
+          }
+        </script>
       </form>
-      <div class="card-line">
+      <div id="cardhide"class="card-line">
         <a href="#">
           <div class="card">
             <h2>Pirmdiena</h2>
@@ -50,8 +74,8 @@
           </div>
         </a>
       </div>
-      <div class="u-table u-table-responsive u-table-1 mobile-hide">
-        <table class="u-table-entity">
+      <div id="tablehide" class="u-table u-table-responsive u-table-1 mobile-hide">
+        <table  class="u-table-entity">
           <thead class="u-align-left u-custom-font u-palette-1-base u-table-header u-text-font u-table-header-1">
             <tr style="height: 56px;">
               <th class="u-align-center u-border-3 u-border-grey-dark-1 u-table-cell u-table-cell-1">Vards Uzvārds</th>
@@ -115,12 +139,20 @@
         </ul>
       </div>
 
+      <div id="SearchView" class="card-search" style="width: 20.5rem;">
+        <div class="card-body-search">
+          <h5 class="card-title">Skolotajs Labais</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <a class="list-group-item">Pirmdien Ve A-203 </a>
+          <a class="list-group-item">Otrdiena V A-201</a>
+        </ul>
+      </div>
     </div>
   </section>
   <?php
   include('footer.php');
   ?>
-
 
 
 </body>
