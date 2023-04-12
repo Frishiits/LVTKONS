@@ -3,7 +3,7 @@ require_once("database.php");
 // if acces token is invalid or not gotten then go back to login.php file
 function Invalid_seasson($email)
 {
-    if (!isset($_SESSION['t'])) {
+    if (!isset($_SESSION['t']) && empty($email)) {
         session_start();
         $_SESSION['state']=session_id();
         $env = parse_ini_file('.env');
