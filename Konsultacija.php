@@ -30,7 +30,7 @@
         <?php
         if (isset($_POST['searchbar']))
           $keyword = $_POST['searchbar'];
-
+          //TEST
         ?>
 
         <script>
