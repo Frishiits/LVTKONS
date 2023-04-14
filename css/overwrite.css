@@ -25,7 +25,13 @@ p.u-text.u-align-left {
  margin-left: 10%;
  cursor: pointer; /* add a pointer cursor to indicate interactivity */
 }
-
+.card-search {
+  border: 1px solid black;
+  margin: 10px;
+  margin-left: 10%;
+  cursor: pointer; /* add a pointer cursor to indicate interactivity */
+  display: none;
+ }
 .li {
   color: white;
 }
@@ -34,6 +40,10 @@ p.u-text.u-align-left {
   border: 1px solid black;
   margin: 10px;
 }
+
+
+
+
 a {
   text-decoration: none;
   color: #0676a4;
