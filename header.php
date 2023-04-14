@@ -10,7 +10,7 @@ if (!isset($_SESSION['t'])) {
 <header class="u-clearfix u-custom-color-1 u-header u-header" id="sec-fe6d">
   <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-sheet-1">
     <a href="index.php" class="u-image u-logo u-image-1" data-image-width="198" data-image-height="50">
-      <img src="images/logo_new_balts.png" class="u-logo-image u-logo-image-1">
+      <img src="images/LOGO_100_LVT.png" class="u-logo-image u-logo-image-1">
     </a>
     <nav class="u-menu u-menu-one-level u-menu-open-right u-offcanvas u-menu-1" data-responsive-from="MD"
         data-submenu-level="on-click" data-position=""><div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
