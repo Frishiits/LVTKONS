@@ -1,7 +1,7 @@
 <?php
 session_start();
 $_SESSION['state']=session_id();
-$env = parse_ini_file('database/.env');
+$env = parse_ini_file('backend/.env');
 
 $login_url ="https://login.microsoftonline.com/".$env['tenant']."/oauth2/v2.0/authorize";
 $client_id = $env['client_id'];

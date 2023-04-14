@@ -1,7 +1,9 @@
 <?php
 include("backend/function.php");
 MicrosoftInfo();
-//Invalid_seasson($_SESSION['email']);
+if (!isset($_SESSION['t'])) {
+  header('location:login.php');
+}
 ?>
 
 

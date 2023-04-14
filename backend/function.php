@@ -68,7 +68,7 @@ function MicrosoftInfo()
         curl_close($ch);
         header('Location: ' . $callback);
     }
-    session_abort();
+ 
 
 }
 
