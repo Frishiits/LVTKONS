@@ -46,7 +46,7 @@
                 <h2 class="u-text u-text-default u-text-1">
                   <?= $_SESSION['fullname']; ?>
                 </h2>
-                <p class="u-text u-text-2"> TEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXTTEXT TEXT</p>
+                <p class="u-text u-text-2"> TEXT</p>
                 <!--<a href="" class="u-btn u-button-style u-btn-1">Button</a>
                   !-->
               </div>
