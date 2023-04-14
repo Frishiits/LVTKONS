@@ -82,9 +82,9 @@ CREATE TABLE IF NOT EXISTS `mydb`.`pieteikums` (
   `skolnieks_skolnieks_id` INT NOT NULL,
   `Konsultācija_konsultācija_id` INT NOT NULL,
   PRIMARY KEY (`pieteikums_id`, `skolotajs_skolotajs_id`, `skolotajs_skolotajs_id1`, `skolnieks_skolnieks_id`, `Konsultācija_konsultācija_id`),
-  INDEX `fk_pieteikums_skolotajs_idx` (`skolotajs_skolotajs_id1` ASC) VISIBLE,
-  INDEX `fk_pieteikums_skolnieks1_idx` (`skolnieks_skolnieks_id` ASC) VISIBLE,
-  INDEX `fk_pieteikums_Konsultācija1_idx` (`Konsultācija_konsultācija_id` ASC) VISIBLE,
+  INDEX `fk_pieteikums_skolotajs_idx` (`skolotajs_skolotajs_id1`),
+  INDEX `fk_pieteikums_skolnieks1_idx` (`skolnieks_skolnieks_id`),
+  INDEX `fk_pieteikums_Konsultācija1_idx` (`Konsultācija_konsultācija_id`),
   CONSTRAINT `fk_pieteikums_skolotajs`
     FOREIGN KEY (`skolotajs_skolotajs_id1`)
     REFERENCES `mydb`.`skolotajs` (`skolotajs_id`)
