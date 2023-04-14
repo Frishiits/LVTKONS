@@ -28,6 +28,7 @@
 
   <?php
   include('header.php');
+  include('backend\database.php')
   ?>
   <section class="u-align-center u-clearfix u-gradient u-section-1" id="carousel_1d8f">
     <div class="u-clearfix u-sheet u-sheet-1">
@@ -37,12 +38,10 @@
         </h2>
         <?php
         echo '<div class="same-line">';
-        
-        echo '<div class="alert alert-warning" role="alert">';
-        echo ' <p class="u-text u-align-left" ><span class="u-file-icon u-icon"><img
-          src="images/3652191.png" alt=""></span>&nbspNedēļas pārskats: <br> EU KAS NOTIEK?</p>';
-        //echo implode(', ', $errors);
-        echo '</div>';
+       // TODO:
+        //$result = $pdo->query("SELECT * FROM pieteikums WHERE skolnieks_skolnieks_id = (SELECT skolnieks_id FROM skolnieks WHERE vards = 'Daniels'); ORDER BY `pieteikums`.`laiks` DESC");
+        //$rows = $result->fetchAll();
+        foreach ($rows as $row) {
 
         echo '<div class="alert alert-warning" role="alert">';
         echo ' <p class="u-text u-align-left" ><span class="u-file-icon u-icon"><img
@@ -51,13 +50,8 @@
         echo '</div>';
 
 
-        echo '<div class="alert alert-warning" role="alert">';
-        echo ' <p class="u-text u-align-left" ><span class="u-file-icon u-icon"><img
-          src="images/3652191.png" alt=""></span>&nbspNedēļas pārskats: <br> EU KAS NOTIEK?</p>';
-        //echo implode(', ', $errors);
-        echo '</div>';
 
-
+        }
         echo '</div>';
 
         ?>
