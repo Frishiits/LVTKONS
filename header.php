@@ -1,5 +1,6 @@
 <?php
 include("backend/function.php");
+include("backend/database.php");
 MicrosoftInfo();
 if (!isset($_SESSION['t'])) {
   header('location:login.php');
