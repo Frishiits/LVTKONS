@@ -36,14 +36,17 @@
           <?= substr($_SESSION['username'], 0, -1); ?>!
         </h2>
         <?php
+        
         echo '<div class="same-line">';
         // TODO:
-        $result = $pdo->query("SELECT * FROM pieteikums,konsultācija,prieksmets,skolotajs WHERE skolnieks_skolnieks_id = (SELECT skolnieks_id FROM skolnieks WHERE vards = 'Daniels');");
+        $result = $pdo->query("SELECT *,DATE_FORMAT(laiks, '%e %M') AS month FROM pieteikums,konsultācija,prieksmets,skolotajs WHERE skolnieks_skolnieks_id = (SELECT skolnieks_id FROM skolnieks WHERE vards = 'Daniels');");
         $rows = $result->fetchAll();
         foreach ($rows as $row) {
+          $formatted_date = $row['month'];
+
 
           echo '<div class="alert alert-warning"   role="alert">';
-          echo ' <p class="u-text u-align-left" > <b>' . $row['prieksmets'] . '</b> <br> ' . $row['iela'] . ':' . $row['kabinets'] . ' <br>' . $row['laiks'] . '</p>';
+          echo ' <p class="u-text u-align-left" > <b>' . $row['prieksmets'] . '</b> <br> ' . $row['iela'] . ': ' . $row['kabinets'] . ' <br> Datums: ' .  $formatted_date . '</p>';
           //echo implode(', ', $errors);
           echo '</div>';
 
