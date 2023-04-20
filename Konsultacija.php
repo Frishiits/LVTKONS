@@ -30,11 +30,11 @@
         <?php
         if (isset($_POST['searchbar']))
           $keyword = $_POST['searchbar'];
-          if (isset($keyword) && !empty($keyword)) {
-            //$result = $pdo->query("SELECT * FROM pieteikums where telpa like '%$keyword%' or status like '%$keyword%' or iela like '%$keyword%' or problema  like '%$keyword%' or piezimes  like '%$keyword%' or epasts  like '%$keyword%' ORDER BY `pieteikums`.`laiks` DESC");
-          } else {
+        if (isset($keyword) && !empty($keyword)) {
+          //$result = $pdo->query("SELECT * FROM pieteikums where telpa like '%$keyword%' or status like '%$keyword%' or iela like '%$keyword%' or problema  like '%$keyword%' or piezimes  like '%$keyword%' or epasts  like '%$keyword%' ORDER BY `pieteikums`.`laiks` DESC");
+        } else {
           //  $result = $pdo->query("SELECT * FROM pieteikums ORDER BY `pieteikums`.`laiks` DESC");
-          }
+        }
         ?>
 
         <script>
@@ -49,12 +49,12 @@
               element.style.display = "none"; // Hiding the result element
               seachview.style.display = "flex";
             } else {
-             // resultElement.style.display = "block"; // Showing the result element
+              // resultElement.style.display = "block"; // Showing the result element
             }
           }
         </script>
       </form>
-      <div id="cardhide"class="card-line">
+      <div id="cardhide" class="card-line">
         <a href="#">
           <div class="card">
             <h2>Pirmdiena</h2>
@@ -77,7 +77,7 @@
         </a>
       </div>
       <div id="tablehide" class="u-table u-table-responsive u-table-1 mobile-hide">
-        <table  class="u-table-entity">
+        <table class="u-table-entity">
           <thead class="u-align-left u-custom-font u-palette-1-base u-table-header u-text-font u-table-header-1">
             <tr style="height: 56px;">
               <th class="u-align-center u-border-3 u-border-grey-dark-1 u-table-cell u-table-cell-1">Vards Uzvārds</th>
@@ -88,6 +88,14 @@
             </tr>
           </thead>
           <tbody class="u-table-alt-grey-5 u-table-body u-white u-table-body-1">
+            <?php
+              $result = $pdo->query("SELECT * FROM pieteikums,konsultācija,prieksmets,skolotajs ");
+              $rows = $result->fetchAll();
+
+              foreach($rows as $row){
+                
+              }
+            ?>
             <tr style="height: 51px;">
               <td class="u-border-1 u-border-grey-75 u-table-cell">Skolotajs 1</td>
               <td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7"></td>

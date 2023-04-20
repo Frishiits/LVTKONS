@@ -37,15 +37,15 @@
         </h2>
         <?php
         echo '<div class="same-line">';
-       // TODO:
+        // TODO:
         $result = $pdo->query("SELECT * FROM pieteikums,konsultācija,prieksmets,skolotajs WHERE skolnieks_skolnieks_id = (SELECT skolnieks_id FROM skolnieks WHERE vards = 'Daniels');");
         $rows = $result->fetchAll();
         foreach ($rows as $row) {
 
-        echo '<div class="alert alert-warning" role="alert">';
-        echo ' <p class="u-text u-align-left" ><span class="u-file-icon u-icon"></span>  '.$row['prieksmets'].' <br> '.$row['iela'].':'.$row['kabinets'].' <br>'.$row['laiks'].'</p>';
-        //echo implode(', ', $errors);
-        echo '</div>';
+          echo '<div class="alert alert-warning"   role="alert">';
+          echo ' <p class="u-text u-align-left" > <b>' . $row['prieksmets'] . '</b> <br> ' . $row['iela'] . ':' . $row['kabinets'] . ' <br>' . $row['laiks'] . '</p>';
+          //echo implode(', ', $errors);
+          echo '</div>';
 
 
 
