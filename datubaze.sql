@@ -89,12 +89,12 @@ CREATE TABLE IF NOT EXISTS `mydb`.`pieteikums` (
     REFERENCES `mydb`.`skolotajs` (`skolotajs_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_pieteikums_skolnieks1`
+  CONSTRAINT `fk_pieteikums_skolnieks`
     FOREIGN KEY (`id_skolnieks`)
     REFERENCES `mydb`.`skolnieks` (`skolnieks_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_pieteikums_Konsultācija1`
+  CONSTRAINT `fk_pieteikums_Konsultācija`
     FOREIGN KEY (`id_konsultacijas`)
     REFERENCES `mydb`.`Konsultācija` (`konsultācija_id`)
     ON DELETE NO ACTION
