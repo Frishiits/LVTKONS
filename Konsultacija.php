@@ -89,50 +89,45 @@
           </thead>
           <tbody class="u-table-alt-grey-5 u-table-body u-white u-table-body-1">
             <?php
-              $result = $pdo->query("SELECT * FROM pieteikums,konsultācija,prieksmets,skolotajs ");
-              $rows = $result->fetchAll();
+            $result = $pdo->query("SELECT *,DAYOFWEEK(laiks) AS day_number,DATE_FORMAT(sākums,'%H:%i') AS laiks_time,DATE_FORMAT(beigas,'%H:%i') AS laiks_time1 FROM pieteikums,konsultācija,prieksmets,skolotajs ");
+            $rows = $result->fetchAll();
 
-              foreach($rows as $row){
-                
-              }
+            foreach ($rows as $row) {
+
+              $day_number = $row['day_number'];
+              $days_of_week = array('Svētdiena', 'Pirmdiena', 'Otrdiena', 'Trešdiena', 'Ceturtdiena', 'Piektdiena', 'Sestdiena');
+              $day_of_week = $days_of_week[$day_number - 1];
+              $laiks_time = $row['laiks_time'];
+              $laiks_time1 = $row['laiks_time1'];
+              ?>
+              <tr style="height: 51px;">
+                <td class="u-border-1 u-border-grey-75 u-table-cell">
+                  <?= $row['vards'];?>
+                  <?= $row['uzvards']; ?>
+                </td>
+                <?php
+                if ($day_of_week == 'Pirmdiena') {
+                  echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7">'.$row['iela'].' '.$laiks_time.'-'.$laiks_time1.'</td>';
+                } else 
+                echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7"></td>';
+                if ($day_of_week == 'Otrdiena') {
+                  echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7">'.$row['iela'].' '.$laiks_time.'-'.$laiks_time1.'</td>';
+                } else 
+                echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7"></td>';
+                if ($day_of_week == 'Trešdiena') {
+                  echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7">'.$row['iela'].' '.$laiks_time.'-'.$laiks_time1.'</td>';
+                } else 
+                echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7"></td>';
+                if ($day_of_week == 'Ceturtdiena') {
+                  echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7">'.$row['iela'].' '.$laiks_time.'-'.$laiks_time1.'</td>';
+                } else 
+                echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7"></td>';
+                ?>
+              </tr>
+              <?php
+            }
             ?>
-            <tr style="height: 51px;">
-              <td class="u-border-1 u-border-grey-75 u-table-cell">Skolotajs 1</td>
-              <td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7"></td>
-              <td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-8"></td>
-              <td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-9"></td>
-              <td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-10">16.10 –
-                17.10&nbsp;<br>Ve A-105&nbsp;
-              </td>
-            </tr>
-            <tr style="height: 51px;">
-              <td class="u-border-1 u-border-grey-75 u-table-cell">Skolotajs 2</td>
-              <td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-12">16.10 –
-                17.10&nbsp;<br>Ve A-105&nbsp;
-              </td>
-              <td class="u-border-1 u-border-grey-75 u-table-cell"></td>
-              <td class="u-border-1 u-border-grey-75 u-table-cell"></td>
-              <td class="u-border-1 u-border-grey-75 u-table-cell"></td>
-            </tr>
-            <tr style="height: 51px;">
-              <td class="u-border-1 u-border-grey-75 u-table-cell">Skolotajs 3</td>
-              <td class="u-border-1 u-border-grey-75 u-table-cell"></td>
-              <td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-18">16.10 –
-                17.10&nbsp;<br>Ve A-105&nbsp;
-              </td>
-              <td class="u-border-1 u-border-grey-75 u-table-cell"></td>
-              <td class="u-border-1 u-border-grey-75 u-table-cell"></td>
-            </tr>
-            <tr style="height: 52px;">
-              <td class="u-border-1 u-border-grey-75 u-table-cell">Skolotajs 4<br>
-              </td>
-              <td class="u-border-1 u-border-grey-75 u-table-cell"></td>
-              <td class="u-border-1 u-border-grey-75 u-table-cell"></td>
-              <td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-24">16.10 –
-                17.10&nbsp;<br>Ve A-105&nbsp;
-              </td>
-              <td class="u-border-1 u-border-grey-75 u-table-cell"></td>
-            </tr>
+
           </tbody>
         </table>
       </div>
