@@ -39,7 +39,10 @@
         
         echo '<div class="same-line">';
         // TODO:
-        $result = $pdo->query("SELECT *,DATE_FORMAT(laiks, '%e %M') AS month FROM pieteikums,konsultācija,prieksmets,skolotajs WHERE skolnieks_skolnieks_id = (SELECT skolnieks_id FROM skolnieks WHERE vards = 'Daniels');");
+        $result = $pdo->query("SELECT *,DATE_FORMAT(laiks, '%e %M') AS month FROM pieteikums
+        JOIN konsultācija ON pieteikums.Konsultācija_konsultācija_id = konsultācija.konsultācija_id
+        JOIN prieksmets ON prieksmets = prieksmets.prieksmets_id
+        JOIN skolotajs ON pieteikums.skolotajs_skolotajs_id = skolotajs.skolotajs_id WHERE skolnieks_skolnieks_id = (SELECT skolnieks_id FROM skolnieks WHERE vards = 'Daniels');");
         $rows = $result->fetchAll();
         foreach ($rows as $row) {
           $formatted_date = $row['month'];

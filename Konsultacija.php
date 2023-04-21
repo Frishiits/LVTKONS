@@ -89,7 +89,10 @@
           </thead>
           <tbody class="u-table-alt-grey-5 u-table-body u-white u-table-body-1">
             <?php
-            $result = $pdo->query("SELECT *,DAYOFWEEK(laiks) AS day_number,DATE_FORMAT(sākums,'%H:%i') AS laiks_time,DATE_FORMAT(beigas,'%H:%i') AS laiks_time1 FROM pieteikums,konsultācija,prieksmets,skolotajs ");
+            $result = $pdo->query("SELECT *,DAYOFWEEK(laiks) AS day_number,DATE_FORMAT(sākums,'%H:%i') AS laiks_time,DATE_FORMAT(beigas,'%H:%i') AS laiks_time1 FROM pieteikums
+            JOIN konsultācija ON pieteikums.Konsultācija_konsultācija_id = konsultācija.konsultācija_id
+            JOIN prieksmets ON prieksmets = prieksmets.prieksmets_id
+            JOIN skolotajs ON pieteikums.skolotajs_skolotajs_id = skolotajs.skolotajs_id ");
             $rows = $result->fetchAll();
 
             foreach ($rows as $row) {
@@ -107,19 +110,19 @@
                 </td>
                 <?php
                 if ($day_of_week == 'Pirmdiena') {
-                  echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7">'.$row['iela'].' '.$laiks_time.'-'.$laiks_time1.'</td>';
+                  echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7">'.$row['iela'].' <br> '.$laiks_time.'-'.$laiks_time1.'</td>';
                 } else 
                 echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7"></td>';
                 if ($day_of_week == 'Otrdiena') {
-                  echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7">'.$row['iela'].' '.$laiks_time.'-'.$laiks_time1.'</td>';
+                  echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7">'.$row['iela'].' <br> '.$laiks_time.'-'.$laiks_time1.'</td>';
                 } else 
                 echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7"></td>';
                 if ($day_of_week == 'Trešdiena') {
-                  echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7">'.$row['iela'].' '.$laiks_time.'-'.$laiks_time1.'</td>';
+                  echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7">'.$row['iela'].' <br> '.$laiks_time.'-'.$laiks_time1.'</td>';
                 } else 
                 echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7"></td>';
                 if ($day_of_week == 'Ceturtdiena') {
-                  echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7">'.$row['iela'].' '.$laiks_time.'-'.$laiks_time1.'</td>';
+                  echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7">'.$row['iela'].' <br> '.$laiks_time.'-'.$laiks_time1.'</td>';
                 } else 
                 echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7"></td>';
                 ?>
