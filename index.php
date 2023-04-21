@@ -35,7 +35,7 @@
     var isTeacher = userEmail.indexOf("@sk") === -1; // returns true if the email does not contain the subdomain "sk"
 
     // If user is an admin, show the admin-only element
-    if (true) {
+    if (isTeacher) {
       document.getElementById("teacher-only").style.display = "block";
       document.getElementById("teacher-hide").style.display = "none";
     
@@ -64,8 +64,6 @@
           echo ' <p class="u-text u-align-left" > <b>' . $row['prieksmets'] . '</b> <br> ' . $row['iela'] . ': ' . $row['kabinets'] . ' <br> Datums: ' . $formatted_date . '</p>';
           //echo implode(', ', $errors);
           echo '</div>';
-
-
 
         }
         echo '</div>';
