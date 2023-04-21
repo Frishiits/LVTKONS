@@ -28,6 +28,8 @@
 
   <?php
   include('header.php');
+  $email = isset($_SESSION['email']) ? $_SESSION['email'] : '';
+  echo "<script>var userEmail = '$email';</script>";
   ?>
   <section class="u-align-center u-clearfix u-gradient u-section-1" id="carousel_1d8f">
     <div class="u-clearfix u-sheet u-sheet-1">
