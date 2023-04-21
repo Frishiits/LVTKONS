@@ -53,9 +53,7 @@
       <option value="optionC">Mācīties</option>
     </select><br><br>
 
-    <button type="button" class="decline" onclick="confirmDecline()">Atcelt</button>
-    <button type="submit" class="submit" onclick="confirmSubmit()">Pieteikties</button>
-
+    
     <div class="calendar">
       <div class="month">
         <div class="prev">&#10094;</div>
@@ -64,6 +62,11 @@
       </div>
       <div class="days"></div>
     </div>
+
+
+    <button type="button" class="decline" onclick="confirmDecline()">Atcelt</button>
+    <button type="submit" class="submit" onclick="confirmSubmit()">Pieteikties</button>
+
   </form>
 
 
