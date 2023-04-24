@@ -21,20 +21,39 @@
 </head>
 
 <body class="u-body u-xl-mode" data-lang="en">
-
-  <?php
+<?php
   include('header.php');
-  $parts = explode('@', $_SESSION['email']);
-    $domain = array_pop($parts);
-    $blocked_domains = array('sk'); // to block sub domain add sk in here
-    if (in_array(explode('.', $domain)[0], $blocked_domains)) {
-        header("location:index.php");
-     
-    }
+  
   //TODO: either a table or a grid that displays students who will go to cons.
   ?>
-
-
+<section class="u-align-center u-clearfix u-section-1">
+    <div class="u-clearfix u-sheet u-sheet-1">
+    <h2 class="u-align-left">Jūsu nedēļas plāns
+        </h2>
+ <div id="cardhide" class="card-line">
+        <a href="#">
+          <div class="card">
+            <h2>Pirmdiena</h2>
+          </div>
+        </a>
+        <a href="#">
+          <div class="card">
+            <h2>Otrdiena</h2>
+          </div>
+        </a>
+        <a href="#">
+          <div class="card">
+            <h2>Trešdiena</h2>
+          </div>
+        </a>
+        <a href="#">
+          <div class="card">
+            <h2>Ceturtdiena</h2>
+          </div>
+        </a>
+      </div>
+    </div>
+</section>
 
 
 
