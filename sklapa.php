@@ -18,16 +18,19 @@
   <link id="u-theme-google-font" rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
   <link rel="stylesheet" href="css/overwrite.css" media="screen">
-  <meta name="theme-color" content="#478ac9">
-  <meta property="og:title" content="Home">
-  <meta property="og:type" content="website">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/">
 </head>
 
 <body class="u-body u-xl-mode" data-lang="en">
 
   <?php
   include('header.php');
+  $parts = explode('@', $_SESSION['email']);
+    $domain = array_pop($parts);
+    $blocked_domains = array('sk'); // to block sub domain add sk in here
+    if (in_array(explode('.', $domain)[0], $blocked_domains)) {
+        header("location:index.php");
+     
+    }
   //TODO: either a table or a grid that displays students who will go to cons.
   ?>
 
