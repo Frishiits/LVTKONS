@@ -52,6 +52,88 @@
           </div>
         </a>
       </div>
+
+
+
+
+
+
+
+      <div class="calendar">
+      <div class="month">
+        <div class="prev">&#10094;</div>
+        <div class="next">&#10095;</div>
+        <div class="month-name"></div>
+      </div>
+      <div class="days"></div>
+    </div>
+
+
+
+
+
+
+  <script>const months = ['Janvāris', 'Februāris', 'Marts', 'Aprīlis', 'Maijs', 'Jūnijs', 'Jūlijs', 'Augusts', 'Septembris', 'Octobris', 'Novembris', 'Decembris'];
+
+    const calendar = document.querySelector('.calendar');
+    const monthName = calendar.querySelector('.month-name');
+    const daysContainer = calendar.querySelector('.days');
+
+    let currentDate = new Date();
+
+    function updateCalendar() {
+      // Clear the old days
+      daysContainer.innerHTML = '';
+
+      // Get the year and month
+      const year = currentDate.getFullYear();
+      const month = currentDate.getMonth();
+
+      // Set the month name
+      monthName.textContent = months[month] + ' ' + year;
+
+      // Get the number of days in the month
+      const numDays = new Date(year, month + 1, 0).getDate();
+
+      // Get the first day of the month
+      const firstDay = new Date(year, month, 1).getDay();
+
+      // Create the empty cells for the days before the 1st of the month
+      for (let i = 0; i < firstDay; i++) {
+        const cell = document.createElement('div');
+        daysContainer.appendChild(cell);
+      }
+
+      // Create the cells for the days of the month
+      for (let i = 1; i <= numDays; i++) {
+        const cell = document.createElement('div');
+        cell.textContent = i;
+        if (i === currentDate.getDate() && month === currentDate.getMonth() && year === currentDate.getFullYear()) {
+          cell.classList.add('today');
+        }
+        daysContainer.appendChild(cell);
+      }
+    }
+
+    updateCalendar();
+
+    calendar.querySelector('.prev').addEventListener('click', () => {
+      currentDate.setMonth(currentDate.getMonth() - 1);
+      updateCalendar();
+    });
+
+    calendar.querySelector('.next').addEventListener('click', () => {
+      currentDate.setMonth(currentDate.getMonth() + 1);
+      updateCalendar();
+    });
+
+    daysContainer.addEventListener('click', (event) => {
+      const cell = event.target;
+      if (!cell.textContent) {
+        return;
+      }
+      alert(`You clicked on ${cell.textContent} ${months[currentDate.getMonth()]} ${currentDate.getFullYear()}`);
+    });</script>
     </div>
 </section>
 
