@@ -72,14 +72,14 @@ function MicrosoftInfo()
 
 }
 
-function block_domain()
+function IsTeacher()
 {
-    //Block subdomain 
+    
     $parts = explode('@', $_SESSION['email']);
     $domain = array_pop($parts);
     $blocked_domains = array('sk'); // to block sub domain add sk in here
-    if (!$_SESSION['username'] == 'Daniels' && in_array(explode('.', $domain)[0], $blocked_domains)) {
-        header("location:blocked.php");
+    if (in_array(explode('.', $domain)[0], $blocked_domains)) {
+        header("location:index.php");
         exit();
     }
 }
