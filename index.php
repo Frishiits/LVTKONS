@@ -51,7 +51,7 @@
 
         echo '<div class="same-line">';
         // TODO:
-        $result = $pdo->query("SELECT *,DATE_FORMAT(laiks, '%e %M') AS month FROM pieteikums,konsultācija,prieksmets,skolotajs WHERE skolnieks_skolnieks_id = (SELECT skolnieks_id FROM skolnieks WHERE vards = 'Daniels');");
+        $result = $pdo->query("SELECT *,DATE_FORMAT(laiks, '%e %M') AS month FROM pieteikums,konsultācija,prieksmets,skolotajs WHERE id_skolnieks = (SELECT skolnieks_id FROM skolnieks WHERE vards = 'Daniels');");
         $rows = $result->fetchAll();
         foreach ($rows as $row) {
           $formatted_date = $row['month'];
