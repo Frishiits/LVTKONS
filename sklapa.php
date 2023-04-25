@@ -42,6 +42,10 @@
 		  color: white;
 		  font-weight: bold;
 		}
+  	.info {
+		  font-size: 0.8rem;
+		  margin-top: 5px;
+		}
 	</style>
 </head>
 
@@ -53,21 +57,74 @@
   ?>
 <section class="u-align-center u-clearfix u-section-1">
     <div class="u-clearfix u-sheet u-sheet-1">
+    
     <div class="grid-container">
-		<div class="grid-item">Pirmdiena</div>
-		<div class="grid-item">Otrdiena</div>
-		<div class="grid-item">Trešdiena</div>
-		<div class="grid-item">Ceturtdiena</div>
-		<div class="grid-item">Piektdiena</div>
-		<div class="grid-item">Sestdiena</div>
-		<div class="grid-item">Svētdiena</div>
-		<div class="grid-item today">Pirmdiena</div>
-		<div class="grid-item">Otrdiena</div>
-		<div class="grid-item">Trešdiena</div>
-		<div class="grid-item">Ceturtdiena</div>
-		<div class="grid-item">Piektdiena</div>
-		<div class="grid-item">Sestdiena</div>
-		<div class="grid-item">Svētdiena</div>
+		<div class="grid-item">
+			Pirmdiena
+			<div class="info">01.01.2023</div>
+		</div>
+		<div class="grid-item">
+			Otrdiena
+			<div class="info">02.01.2023</div>
+		</div>
+		<div class="grid-item">
+			Trešdiena
+			<div class="info">03.01.2023</div>
+		</div>
+		<div class="grid-item">
+			Ceturtdiena
+			<div class="info">04.01.2023</div>
+		</div>
+		<div class="grid-item">
+			Piektdiena
+			<div class="info">05.01.2023</div>
+		</div>
+		<div class="grid-item">
+			Sestdiena
+			<div class="info">06.01.2023</div>
+		</div>
+		<div class="grid-item">
+			Svētdiena
+			<div class="info">07.01.2023</div>
+		</div>
+		<div class="grid-item today">
+			Pirmdiena
+			<div class="info">08.01.2023</div>
+		</div>
+		<div class="grid-item">
+			Otrdiena
+			<div class="info">09.01.2023</div>
+		</div>
+		<div class="grid-item">
+			Trešdiena
+			<div class="info">10.01.2023</div>
+		</div>
+		<div class="grid-item">
+			Ceturtdiena
+			<div class="info">11.01.2023</div>
+		</div>
+		<div class="grid-item">
+			Piektdiena
+			<div class="info">12.01.2023</div>
+		</div>
+		<div class="grid-item">
+			Sestdiena
+			<div class="info">13.01.2023</div>
+		</div>
+		<div class="grid-item">
+			Svētdiena
+			<div class="info">14.01.2023</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
 	</div>
     </div>
 </section>
