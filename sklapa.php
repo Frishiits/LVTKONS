@@ -18,6 +18,31 @@
   <link id="u-theme-google-font" rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
   <link rel="stylesheet" href="css/overwrite.css" media="screen">
+
+  <style>
+		.grid-container {
+		  display: grid;
+		  grid-template-columns: repeat(7, 1fr);
+		  grid-gap: 10px;
+		  background-color: #2196F3;
+		  color: white;
+		  padding: 10px;
+		  font-size: 1.5rem;
+		}
+
+		.grid-item {
+		  border: 1px solid #ccc;
+		  padding: 10px;
+		  text-align: center;
+		  font-size: 1.2rem;
+		}
+
+		.today {
+		  background-color: #4CAF50;
+		  color: white;
+		  font-weight: bold;
+		}
+	</style>
 </head>
 
 <body class="u-body u-xl-mode" data-lang="en">
@@ -28,112 +53,22 @@
   ?>
 <section class="u-align-center u-clearfix u-section-1">
     <div class="u-clearfix u-sheet u-sheet-1">
-    <h2 class="u-align-left">Jūsu nedēļas plāns
-        </h2>
- <div id="cardhide" class="card-line">
-        <a href="#">
-          <div class="card">
-            <h2>Pirmdiena</h2>
-          </div>
-        </a>
-        <a href="#">
-          <div class="card">
-            <h2>Otrdiena</h2>
-          </div>
-        </a>
-        <a href="#">
-          <div class="card">
-            <h2>Trešdiena</h2>
-          </div>
-        </a>
-        <a href="#">
-          <div class="card">
-            <h2>Ceturtdiena</h2>
-          </div>
-        </a>
-      </div>
-
-
-
-
-
-
-
-      <div class="calendar">
-      <div class="month">
-        <div class="prev">&#10094;</div>
-        <div class="next">&#10095;</div>
-        <div class="month-name"></div>
-      </div>
-      <div class="days"></div>
-    </div>
-
-
-
-
-
-
-  <script>const months = ['Janvāris', 'Februāris', 'Marts', 'Aprīlis', 'Maijs', 'Jūnijs', 'Jūlijs', 'Augusts', 'Septembris', 'Octobris', 'Novembris', 'Decembris'];
-
-    const calendar = document.querySelector('.calendar');
-    const monthName = calendar.querySelector('.month-name');
-    const daysContainer = calendar.querySelector('.days');
-
-    let currentDate = new Date();
-
-    function updateCalendar() {
-      // Clear the old days
-      daysContainer.innerHTML = '';
-
-      // Get the year and month
-      const year = currentDate.getFullYear();
-      const month = currentDate.getMonth();
-
-      // Set the month name
-      monthName.textContent = months[month] + ' ' + year;
-
-      // Get the number of days in the month
-      const numDays = new Date(year, month + 1, 0).getDate();
-
-      // Get the first day of the month
-      const firstDay = new Date(year, month, 1).getDay();
-
-      // Create the empty cells for the days before the 1st of the month
-      for (let i = 0; i < firstDay; i++) {
-        const cell = document.createElement('div');
-        daysContainer.appendChild(cell);
-      }
-
-      // Create the cells for the days of the month
-      for (let i = 1; i <= numDays; i++) {
-        const cell = document.createElement('div');
-        cell.textContent = i;
-        if (i === currentDate.getDate() && month === currentDate.getMonth() && year === currentDate.getFullYear()) {
-          cell.classList.add('today');
-        }
-        daysContainer.appendChild(cell);
-      }
-    }
-
-    updateCalendar();
-
-    calendar.querySelector('.prev').addEventListener('click', () => {
-      currentDate.setMonth(currentDate.getMonth() - 1);
-      updateCalendar();
-    });
-
-    calendar.querySelector('.next').addEventListener('click', () => {
-      currentDate.setMonth(currentDate.getMonth() + 1);
-      updateCalendar();
-    });
-
-    daysContainer.addEventListener('click', (event) => {
-      const cell = event.target;
-      if (!cell.textContent) {
-        return;
-      }
-      alert(`You clicked on ${cell.textContent} ${months[currentDate.getMonth()]} ${currentDate.getFullYear()}`);
-    });</script>
+    <div class="grid-container">
+		<div class="grid-item">Pirmdiena</div>
+		<div class="grid-item">Otrdiena</div>
+		<div class="grid-item">Trešdiena</div>
+		<div class="grid-item">Ceturtdiena</div>
+		<div class="grid-item">Piektdiena</div>
+		<div class="grid-item">Sestdiena</div>
+		<div class="grid-item">Svētdiena</div>
+		<div class="grid-item today">Pirmdiena</div>
+		<div class="grid-item">Otrdiena</div>
+		<div class="grid-item">Trešdiena</div>
+		<div class="grid-item">Ceturtdiena</div>
+		<div class="grid-item">Piektdiena</div>
+		<div class="grid-item">Sestdiena</div>
+		<div class="grid-item">Svētdiena</div>
+	</div>
     </div>
 </section>
 
