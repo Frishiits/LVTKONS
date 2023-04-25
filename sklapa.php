@@ -87,7 +87,7 @@
 			Svētdiena
 			<div class="info">07.01.2023</div>
 		</div>
-		<div class="grid-item today">
+		<div class="grid-item">
 			Pirmdiena
 			<div class="info">08.01.2023</div>
 		</div>
@@ -118,7 +118,37 @@
 	</div>
 
 
+<script>
+  var today = new Date();
+var dayOfWeek = today.getDay();
+var gridItems = document.getElementsByClassName("grid-item");
+switch (dayOfWeek) {
+  case 1:
+    gridItems[0].classList.add("today");
+    break;
+  case 2:
+    gridItems[1].classList.add("today");
+    break;
+  case 3:
+    gridItems[2].classList.add("today");
+    break;
+  case 4:
+    gridItems[3].classList.add("today");
+    break;
+  case 5:
+    gridItems[4].classList.add("today");
+    break;
+  case 6:
+    gridItems[5].classList.add("today");
+    break;
+  case 7:
+    gridItems[6].classList.add("today");
+    break;
+  default:
+    console.log("Error: invalid day of week");
+}
 
+  </script>
 
 
 
