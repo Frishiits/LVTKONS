@@ -67,43 +67,43 @@
     <div class="grid-container">
 		<div class="grid-item" id="Pirmdiena">
 			Pirmdiena
-			<div class="info">01.01.2023</div>
+			<div class="info"></div>
 		</div>
 		<div class="grid-item" id="Otrdiena">
 			Otrdiena
-			<div class="info">02.01.2023</div>
+			<div class="info"></div>
 		</div>
 		<div class="grid-item" id="Trešdiena">
 			Trešdiena
-			<div class="info">03.01.2023</div>
+			<div class="info"></div>
 		</div>
 		<div class="grid-item" id="Ceturtdiena">
 			Ceturtdiena
-			<div class="info">04.01.2023</div>
+			<div class="info"></div>
 		</div>
 		<div class="grid-item" id="Piektdiena">
 			Piektdiena
-			<div class="info">05.01.2023</div>
+			<div class="info"></div>
 		</div>
     <div class="grid-item" id="Pirmdiena">
 			Pirmdiena
-			<div class="info">01.01.2023</div>
+			<div class="info"></div>
 		</div>
 		<div class="grid-item" id="Otrdiena">
 			Otrdiena
-			<div class="info">02.01.2023</div>
+			<div class="info"></div>
 		</div>
 		<div class="grid-item" id="Trešdiena">
 			Trešdiena
-			<div class="info">03.01.2023</div>
+			<div class="info"></div>
 		</div>
 		<div class="grid-item" id="Ceturtdiena">
 			Ceturtdiena
-			<div class="info">04.01.2023</div>
+			<div class="info"></div>
 		</div>
 		<div class="grid-item" id="Piektdiena">
 			Piektdiena
-			<div class="info">05.01.2023</div>
+			<div class="info"></div>
 		</div>
 	</div>
 
