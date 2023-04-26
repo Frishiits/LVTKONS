@@ -23,7 +23,7 @@
 <body class="u-body u-xl-mode" data-lang="en">
 <?php
   include('header.php');
-  
+
   //TODO: either a table or a grid that displays students who will go to cons.
   ?>
 <section class="u-align-center u-clearfix u-section-1">
