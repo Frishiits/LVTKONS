@@ -22,7 +22,7 @@
   <style>
 		.grid-container {
 		  display: grid;
-		  grid-template-columns: repeat(7, 1fr);
+		  grid-template-columns: repeat(5, 1fr);
 		  grid-gap: 10px;
 		  background-color: #2196F3;
 		  color: white;
@@ -65,61 +65,45 @@
     <div class="u-clearfix u-sheet u-sheet-1">
     
     <div class="grid-container">
-		<div class="grid-item">
+		<div class="grid-item" id="Pirmdiena">
 			Pirmdiena
 			<div class="info">01.01.2023</div>
 		</div>
-		<div class="grid-item">
+		<div class="grid-item" id="Otrdiena">
 			Otrdiena
 			<div class="info">02.01.2023</div>
 		</div>
-		<div class="grid-item">
+		<div class="grid-item" id="Trešdiena">
 			Trešdiena
 			<div class="info">03.01.2023</div>
 		</div>
-		<div class="grid-item">
+		<div class="grid-item" id="Ceturtdiena">
 			Ceturtdiena
 			<div class="info">04.01.2023</div>
 		</div>
-		<div class="grid-item">
+		<div class="grid-item" id="Piektdiena">
 			Piektdiena
 			<div class="info">05.01.2023</div>
 		</div>
-		<div class="grid-item">
-			Sestdiena
-			<div class="info">06.01.2023</div>
-		</div>
-		<div class="grid-item">
-			Svētdiena
-			<div class="info">07.01.2023</div>
-		</div>
-		<div class="grid-item">
+    <div class="grid-item" id="Pirmdiena">
 			Pirmdiena
-			<div class="info">08.01.2023</div>
+			<div class="info">01.01.2023</div>
 		</div>
-		<div class="grid-item">
+		<div class="grid-item" id="Otrdiena">
 			Otrdiena
-			<div class="info">09.01.2023</div>
+			<div class="info">02.01.2023</div>
 		</div>
-		<div class="grid-item">
+		<div class="grid-item" id="Trešdiena">
 			Trešdiena
-			<div class="info">10.01.2023</div>
+			<div class="info">03.01.2023</div>
 		</div>
-		<div class="grid-item">
+		<div class="grid-item" id="Ceturtdiena">
 			Ceturtdiena
-			<div class="info">11.01.2023</div>
+			<div class="info">04.01.2023</div>
 		</div>
-		<div class="grid-item">
+		<div class="grid-item" id="Piektdiena">
 			Piektdiena
-			<div class="info">12.01.2023</div>
-		</div>
-		<div class="grid-item">
-			Sestdiena
-			<div class="info">13.01.2023</div>
-		</div>
-		<div class="grid-item">
-			Svētdiena
-			<div class="info">14.01.2023</div>
+			<div class="info">05.01.2023</div>
 		</div>
 	</div>
 
@@ -145,15 +129,36 @@ switch (dayOfWeek) {
     gridItems[4].classList.add("today");
     break;
   case 6:
-    gridItems[5].classList.add("today");
+    
     break;
   case 7:
-    gridItems[6].classList.add("today");
+   
     break;
   default:
     console.log("Error: invalid day of week");
 }
 
+for (var i = 0; i < gridItems.length; i++) {
+			gridItems[i].addEventListener("click", function() {
+				var day = this.getAttribute("id");
+				alert("Today is " + day);
+			});
+    }
+
+var today = new Date();
+var dayOfWeek = today.getDay();
+
+var gridItems = document.getElementsByClassName("info");
+
+for (var i = 0; i < gridItems.length; i++) {
+  var date = new Date();
+  var dayOfWeekIndex = (dayOfWeek + i) % 7;
+  date.setDate(date.getDate() + i - dayOfWeek + 1);
+  var day = date.getDate();
+  var month = date.getMonth() + 1;
+  var dateString = day + "." + month;
+  gridItems[i].innerHTML = dateString;
+}
   </script>
 
 
