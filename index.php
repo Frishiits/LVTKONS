@@ -50,11 +50,8 @@
         <?php
 
         echo '<div class="same-line">';
-        // TODO:  
-        $result = $pdo->query("SELECT *,DATE_FORMAT(laiks, '%e %M') AS month FROM pieteikums
-        JOIN konsultācija ON pieteikums.id_konsultacijas = konsultācija.konsultācija_id
-        JOIN prieksmets ON prieksmets = prieksmets.prieksmets_id
-        JOIN skolotajs ON pieteikums.id_skolotajs = skolotajs.skolotajs_id WHERE id_skolnieks = (SELECT skolnieks_id FROM skolnieks WHERE vards = 'Daniels');");
+        // TODO:
+        $result = $pdo->query("SELECT *,DATE_FORMAT(laiks, '%e %M') AS month FROM pieteikums,konsultācija,prieksmets,skolotajs WHERE id_skolnieks = (SELECT skolnieks_id FROM skolnieks WHERE vards = 'Daniels');");
         $rows = $result->fetchAll();
         if (!empty($rows)) {
           foreach ($rows as $row) {
