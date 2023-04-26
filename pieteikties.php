@@ -38,6 +38,12 @@
 
     <label for="input2">Uzvārds:</label>
     <input type="text" id="input2" name="input2"><br><br> !-->
+    <label for="dropdown1">Izvēlies mācības priekšmetu:</label>
+    <select id="dropdown1" name="dropdown1">
+      <option selected>Mācību priekšmets</option>
+
+    </select><br><br>
+
 
     <label for="dropdown1">Izvēlies ielu:</label>
     <select id="dropdown1" name="dropdown1">
