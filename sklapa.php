@@ -24,10 +24,12 @@
 		  display: grid;
 		  grid-template-columns: repeat(5, 1fr);
 		  grid-gap: 10px;
-		  background-color: #2196F3;
+		  background-color: #2c659f;
 		  color: white;
 		  padding: 10px;
 		  font-size: 1.5rem;
+		  padding: 4rem;
+		  margin-top: 2rem;
 		}
 
 		.grid-item {
@@ -38,8 +40,8 @@
 		}
 
 		.today {
-		  background-color: #4CAF50;
-		  color: white;
+		  background-color: #fff;
+		  color: black;
 		  font-weight: bold;
 		}
   	.info {
