@@ -52,7 +52,13 @@
 <body class="u-body u-xl-mode" data-lang="en">
 <?php
   include('header.php');
-
+  $parts = explode('@', $_SESSION['email']);
+  $domain = array_pop($parts);
+  $blocked_domains = array('sk'); // to block sub domain add sk in here
+  if (!in_array(explode('.', $domain)[0], $blocked_domains)) {
+     echo'<meta http-equiv="refresh" content="0; URL=block.php" />';
+      
+  }
   //TODO: either a table or a grid that displays students who will go to cons.
   ?>
 <section class="u-align-center u-clearfix u-section-1">
