@@ -152,7 +152,7 @@ var today = new Date();
 var dayOfWeek = today.getDay();
 
 var gridItems = document.getElementsByClassName("info");
-
+// add so it skips weekends 
 for (var i = 0; i < 5; i++) {
   var date = new Date();
   var dayOfWeekIndex = (dayOfWeek + i) % 7;
