@@ -22,7 +22,7 @@ if (!isset($_SESSION['t'])) {
 
     }
     else{
-      $result = $pdo->query("SELECT * FROM skolotajs WHERE vards = '".$_SESSION['username']."' AND uzvards = '".$_SESSION['surname']."'");
+      $result = $pdo->query("SELECT * FROM skolotajs WHERE vards = '".$_SESSION['username']."' AND uzvards = '".$_SESSION['surname']."' AND epasts = '".$_SESSION['email']."'");
       $rows = $result->fetchAll();
       
       if(count($rows) == 0) {
