@@ -5,6 +5,20 @@ MicrosoftInfo();
 if (!isset($_SESSION['t'])) {
   header('location:login.php');
 }
+
+$result = $pdo->query("SELECT * FROM skolnieks WHERE vards = '".$_SESSION['username']."' AND uzvards = '".$_SESSION['surname']."'");
+$rows = $result->fetchAll();
+
+if(count($rows) == 0) {
+   // if the user's name and surname are not saved in the database, add them
+   $name = "John"; // replace with the user's name
+   $surname = "Doe"; // replace with the user's surname
+
+   $pdo->query("INSERT INTO `skolnieks` (`skolnieks_id`, `vards`, `uzvards`) VALUES ('', '".$_SESSION['username']."', '".$_SESSION['surname']."')");
+
+
+}
+
 ?>
 
 
