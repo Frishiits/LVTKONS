@@ -74,7 +74,49 @@
     <button type="submit" class="submit" onclick="confirmSubmit()">Pieteikties</button>
 
   </form>
+  <?php
 
+
+// Initialize the required fields array
+$required = array('nodala', 'Problēma', 'Telpa', 'Iela');
+
+// Initialize an empty error array
+$errors = array();
+
+// Check if the form has been submitted
+if (isset($_POST['submit1'])) {
+  // Loop over the required fields and check for empty values
+  foreach ($required as $field) {
+    if (empty($_POST[$field])) {
+      $errors[] = $field . ' lauks ir obligāts';
+    } else {
+      // Store the submitted value in the data array
+      $data[$field] = $_POST[$field];
+    }
+  }
+
+  // If there are no errors, insert the form data into the database
+  if (empty($errors)) {
+    // Insert the form data into the database using an SQL query
+    $pdo->query("INSERT INTO `pieteikums`  ( `iela`, `telpa`, `status`, `problema`, `piezimes`, `nodala`, `epasts`,`vards`,`uzvards`) VALUES
+                    ('" . $_POST['Iela'] . "', '" . $_POST['Telpa'] . "', 'Neatrisināts', '" . $_POST['Problēma'] . "', '" . $_POST['Piez'] . "', '" . $_POST['nodala'] . "', '" . $_SESSION['email'] . "', '" . $_SESSION['username'] . "', '" . $_SESSION['surname'] . "')");
+    // Redirect the user to a success page or display a success message
+    header('location:index.php');
+  }
+}
+// Display the error messages (if any)
+if (!empty($errors)) {
+  echo '<div class="alert alert-danger" role="alert">';
+  echo 'Lūdzu aizpildiet sekojošus laukus: ';
+  echo implode(', ', $errors);
+  echo '</div>';
+}
+function is_selected($value, $selected)
+{
+  return $value === $selected ? 'selected' : '';
+}
+
+?>
 
   <script>
     function confirmSubmit() {
