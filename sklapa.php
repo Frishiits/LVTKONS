@@ -29,6 +29,8 @@
 		  padding: 10px;
 		  font-size: 1.5rem;
 		  margin-top: 3rem;
+      padding: 4rem;
+		  margin-top: 2rem;
 		}
 
 		.grid-item {
