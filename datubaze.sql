@@ -66,8 +66,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Konsultācija` (
   `iela` ENUM("Vānes iela", "Ventspils iela") NOT NULL,
   `kabinets` VARCHAR(45) NOT NULL,
   `laiks` DATE NOT NULL,
-  `sākums` DATETIME NULL,
-  `beigas` DATETIME NULL,
+  `sākums` TIME NULL,
+  `beigas` TIME NULL,
   PRIMARY KEY (`konsultācija_id`))
 ENGINE = InnoDB;
 
