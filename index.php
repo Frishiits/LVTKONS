@@ -28,7 +28,19 @@
 
   <?php
   include('header.php');
+  $email = isset($_SESSION['email']) ? $_SESSION['email'] : '';
+  echo "<script>var userEmail = '$email';</script>";
   ?>
+  <script>
+    var isTeacher = userEmail.indexOf("@sk") === -1; // returns true if the email does not contain the subdomain "sk"
+
+    // If user is an admin, show the admin-only element
+    if (isTeacher) {
+      document.getElementById("teacher-only").style.display = "block";
+      document.getElementById("teacher-hide").style.style.visibility = "hidden";
+
+    }
+  </script>
   <section class="u-align-center u-clearfix u-gradient u-section-1" id="carousel_1d8f">
     <div class="u-clearfix u-sheet u-sheet-1">
       <div class="u-list u-list-1">
@@ -36,34 +48,28 @@
           <?= substr($_SESSION['username'], 0, -1); ?>!
         </h2>
         <?php
+
         echo '<div class="same-line">';
-        
-        echo '<div class="alert alert-warning" role="alert">';
-        echo ' <p class="u-text u-align-left" ><span class="u-file-icon u-icon"><img
-          src="images/3652191.png" alt=""></span>&nbspNedēļas pārskats: <br> EU KAS NOTIEK?</p>';
-        //echo implode(', ', $errors);
-        echo '</div>';
-
-        echo '<div class="alert alert-warning" role="alert">';
-        echo ' <p class="u-text u-align-left" ><span class="u-file-icon u-icon"><img
-          src="images/3652191.png" alt=""></span>&nbspNedēļas pārskats: <br> EU KAS NOTIEK?</p>';
-        //echo implode(', ', $errors);
-        echo '</div>';
+        // TODO:
+        $result = $pdo->query("SELECT *,DATE_FORMAT(laiks, '%e %M') AS month FROM pieteikums,konsultācija,prieksmets,skolotajs WHERE id_skolnieks = (SELECT skolnieks_id FROM skolnieks WHERE vards = 'Daniels');");
+        $rows = $result->fetchAll();
+        if (!empty($rows)) {
+          foreach ($rows as $row) {
+            $formatted_date = $row['month'];
 
 
-        echo '<div class="alert alert-warning" role="alert">';
-        echo ' <p class="u-text u-align-left" ><span class="u-file-icon u-icon"><img
-          src="images/3652191.png" alt=""></span>&nbspNedēļas pārskats: <br> EU KAS NOTIEK?</p>';
-        //echo implode(', ', $errors);
-        echo '</div>';
-
-
+            echo '<div class="alert alert-warning"   role="alert">';
+            echo ' <p class="u-text u-align-left" > <b>' . $row['prieksmets'] . '</b> <br> ' . $row['iela'] . ': ' . $row['kabinets'] . ' <br> Datums: ' . $formatted_date . '</p>';
+            //echo implode(', ', $errors);
+            echo '</div>';
+          }
+        }
         echo '</div>';
 
         ?>
 
         <br>
-        <div class="u-repeater u-repeater-1">
+        <div class="u-repeater u-repeater-1" id="teacher-s">
           <div
             class="u-align-center u-container-style u-list-item u-radius-20 u-repeater-item u-shape-round u-white u-list-item-1">
             <div class="u-container-layout u-similar-container u-container-layout-1">
@@ -92,8 +98,8 @@
               <img src="images/dsds.jpg" alt=""
                 class="u-expanded-width u-image u-image-contain u-image-default u-image-3" data-image-width="626"
                 data-image-height="626">
-              <h4 class="u-text u-text-default u-text-palette-1-base u-text-3">Informācija</h4>
-              <a href="Info.php"
+              <h4 class="u-text u-text-default u-text-palette-1-base u-text-3">Skolotājiem</h4>
+              <a href="sklapa.php"
                 class="u-active-palette-1-base u-border-2 u-border-active-white u-border-hover-white u-border-white u-btn u-btn-round u-button-style u-hover-palette-1-base u-palette-1-base u-radius-50 u-text-active-white u-text-hover-white u-btn-3">
                 ATVĒRT</a>
             </div>
