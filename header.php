@@ -5,6 +5,35 @@ MicrosoftInfo();
 if (!isset($_SESSION['t'])) {
   header('location:login.php');
 }
+    $parts = explode('@', $_SESSION['email']);
+    $domain = array_pop($parts);
+    $blocked_domains = array('sk'); // to block sub domain add sk in here
+    if (in_array(explode('.', $domain)[0], $blocked_domains)) {
+      $result = $pdo->query("SELECT * FROM skolnieks WHERE vards = '".$_SESSION['username']."' AND uzvards = '".$_SESSION['surname']."'");
+      $rows = $result->fetchAll();
+      
+      if(count($rows) == 0) {
+         // if the user's name and surname are not saved in the database, add them
+         $name = "John"; // replace with the user's name
+         $surname = "Doe"; // replace with the user's surname
+      
+         $pdo->query("INSERT INTO `skolnieks` (`skolnieks_id`, `vards`, `uzvards`) VALUES ('', '".$_SESSION['username']."', '".$_SESSION['surname']."')");
+      }
+
+    }
+    else{
+      $result = $pdo->query("SELECT * FROM skolotajs WHERE vards = '".$_SESSION['username']."' AND uzvards = '".$_SESSION['surname']."' AND epasts = '".$_SESSION['email']."'");
+      $rows = $result->fetchAll();
+      
+      if(count($rows) == 0) {
+         // if the user's name and surname are not saved in the database, add them
+         $name = "John"; // replace with the user's name
+         $surname = "Doe"; // replace with the user's surname
+      
+         $pdo->query("INSERT INTO `skolotajs` (`skolotajs_id`, `vards`, `uzvards`, `epasts`) VALUES ('', '".$_SESSION['username']."', '".$_SESSION['surname']."','".$_SESSION['email']."' )");
+      }
+    }
+
 ?>
 
 

@@ -24,12 +24,10 @@
 		  display: grid;
 		  grid-template-columns: repeat(5, 1fr);
 		  grid-gap: 10px;
-		  background-color: #2c659f;
+		  background-color: #2196F3;
 		  color: white;
 		  padding: 10px;
 		  font-size: 1.5rem;
-		  padding: 4rem;
-		  margin-top: 2rem;
 		}
 
 		.grid-item {
@@ -40,8 +38,8 @@
 		}
 
 		.today {
-		  background-color: #fff;
-		  color: black;
+		  background-color: #4CAF50;
+		  color: white;
 		  font-weight: bold;
 		}
   	.info {
@@ -69,43 +67,43 @@
     <div class="grid-container">
 		<div class="grid-item" id="Pirmdiena">
 			Pirmdiena
-			<div class="info">01.01.2023</div>
+			<div class="info"></div>
 		</div>
 		<div class="grid-item" id="Otrdiena">
 			Otrdiena
-			<div class="info">02.01.2023</div>
+			<div class="info"></div>
 		</div>
 		<div class="grid-item" id="Trešdiena">
 			Trešdiena
-			<div class="info">03.01.2023</div>
+			<div class="info"></div>
 		</div>
 		<div class="grid-item" id="Ceturtdiena">
 			Ceturtdiena
-			<div class="info">04.01.2023</div>
+			<div class="info"></div>
 		</div>
 		<div class="grid-item" id="Piektdiena">
 			Piektdiena
-			<div class="info">05.01.2023</div>
+			<div class="info"></div>
 		</div>
     <div class="grid-item" id="Pirmdiena">
 			Pirmdiena
-			<div class="info">01.01.2023</div>
+			<div class="info"></div>
 		</div>
 		<div class="grid-item" id="Otrdiena">
 			Otrdiena
-			<div class="info">02.01.2023</div>
+			<div class="info"></div>
 		</div>
 		<div class="grid-item" id="Trešdiena">
 			Trešdiena
-			<div class="info">03.01.2023</div>
+			<div class="info"></div>
 		</div>
 		<div class="grid-item" id="Ceturtdiena">
 			Ceturtdiena
-			<div class="info">04.01.2023</div>
+			<div class="info"></div>
 		</div>
 		<div class="grid-item" id="Piektdiena">
 			Piektdiena
-			<div class="info">05.01.2023</div>
+			<div class="info"></div>
 		</div>
 	</div>
 
