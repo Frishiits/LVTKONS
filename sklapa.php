@@ -153,7 +153,7 @@ var dayOfWeek = today.getDay();
 
 var gridItems = document.getElementsByClassName("info");
 
-for (var i = 0; i < gridItems.length; i++) {
+for (var i = 0; i < 5; i++) {
   var date = new Date();
   var dayOfWeekIndex = (dayOfWeek + i) % 7;
   date.setDate(date.getDate() + i - dayOfWeek + 1);
