@@ -18,7 +18,7 @@ USE `mydb` ;
 -- Table `mydb`.`prieksmets`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`prieksmets` (
-  `prieksmets_id` INT NOT NULL,
+  `prieksmets_id` INT NOT NULL AUTO_INCREMENT,
   `prieksmets` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`prieksmets_id`))
 ENGINE = InnoDB;
@@ -28,7 +28,7 @@ ENGINE = InnoDB;
 -- Table `mydb`.`skolnieks`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`skolnieks` (
-  `skolnieks_id` INT NOT NULL,
+  `skolnieks_id` INT NOT NULL AUTO_INCREMENT,
   `vards` VARCHAR(45) NOT NULL,
   `uzvards` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`skolnieks_id`))
@@ -39,7 +39,7 @@ ENGINE = InnoDB;
 -- Table `mydb`.`skolotajs`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`skolotajs` (
-  `skolotajs_id` INT NOT NULL,
+  `skolotajs_id` INT NOT NULL AUTO_INCREMENT,
   `vards` VARCHAR(45) NOT NULL,
   `uzvards` VARCHAR(45) NOT NULL,
   `epasts` VARCHAR(45) NOT NULL,
@@ -51,7 +51,7 @@ ENGINE = InnoDB;
 -- Table `mydb`.`login`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`login` (
-  `login_id` INT NOT NULL,
+  `login_id` INT NOT NULL AUTO_INCREMENT,
   `epasts` VARCHAR(45) NOT NULL,
   `parole` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`login_id`))
@@ -62,7 +62,7 @@ ENGINE = InnoDB;
 -- Table `mydb`.`Konsultācija`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Konsultācija` (
-  `konsultācija_id` INT NOT NULL,
+  `konsultācija_id` INT NOT NULL AUTO_INCREMENT,
   `iela` ENUM("Vānes iela", "Ventspils iela") NOT NULL,
   `kabinets` VARCHAR(45) NOT NULL,
   `laiks` DATE NOT NULL,
@@ -76,7 +76,7 @@ ENGINE = InnoDB;
 -- Table `mydb`.`pieteikums`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`pieteikums` (
-  `pieteikums_id` INT NOT NULL,
+  `pieteikums_id` INT NOT NULL AUTO_INCREMENT,
   `id_skolotajs` INT NOT NULL,
   `id_skolnieks` INT NOT NULL,
   `id_konsultacijas` INT NOT NULL,
