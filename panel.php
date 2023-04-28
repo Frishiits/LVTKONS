@@ -33,9 +33,7 @@ include  ('header.php');
         <div class="col-lg-6 mx-auto">
             <div class="card ">
                 <div class="card-header">
-                    <!-- Credit card form content -->
                     <div class="tab-content">
-                        <!-- credit card info-->
                         <div id="credit-card" class="tab-pane fade show active pt-3">
                             <form role="form" onsubmit="event.preventDefault()">
                                 <div class="form-group"> <label for="username">
@@ -65,9 +63,7 @@ include  ('header.php');
                                 <div class="card-footer"> <button type="button" class="subscribe btn btn-primary btn-block shadow-sm"> Confirm Payment </button>
                             </form>
                         </div>
-                    </div> <!-- End -->
-
-                    <!-- End -->
+                    </div>
                 </div>
             </div>
         </div>
