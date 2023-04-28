@@ -17,7 +17,7 @@ if (in_array(explode('.', $domain)[0], $blocked_domains)) {
     $name = "John"; // replace with the user's name
     $surname = "Doe"; // replace with the user's surname
 
-    $pdo->query("INSERT INTO `skolnieks` (`skolnieks_id`, `vards`, `uzvards`) VALUES ( '" . $_SESSION['username'] . "', '" . $_SESSION['surname'] . "')");
+    $pdo->query("INSERT INTO `skolnieks` ( `vards`, `uzvards`) VALUES ( '" . $_SESSION['username'] . "', '" . $_SESSION['surname'] . "')");
   }
 
 } else {
@@ -25,7 +25,7 @@ if (in_array(explode('.', $domain)[0], $blocked_domains)) {
   $rows = $result->fetchAll();
 
   if (count($rows) == 0) {
-    $pdo->query("INSERT INTO `skolotajs` (`skolotajs_id`, `vards`, `uzvards`, `epasts`) VALUES ( '" . $_SESSION['username'] . "', '" . $_SESSION['surname'] . "','" . $_SESSION['email'] . "' )");
+    $pdo->query("INSERT INTO `skolotajs` ( `vards`, `uzvards`, `epasts`) VALUES ( '" . $_SESSION['username'] . "', '" . $_SESSION['surname'] . "','" . $_SESSION['email'] . "' )");
   }
 }
 
