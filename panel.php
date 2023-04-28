@@ -49,14 +49,14 @@ include  ('header.php');
                                 <div class="row">
                                     <div class="col-sm-8">
                                         <div class="form-group"> <label><span class="hidden-xs">
-                                                    <h6>nezinu</h6>
+                                                    <h6>Sākums/Beigas</h6>
                                                 </span></label>
                                             <div class="input-group"> <input type="number" placeholder="MM" name="" class="form-control" required> <input type="number" placeholder="YY" name="" class="form-control" required> </div>
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
-                                        <div class="form-group mb-4"> <label data-toggle="tooltip" title="Three digit CV code on the back of your card">
-                                                <h6>CVV <i class="fa fa-question-circle d-inline"></i></h6>
+                                        <div class="form-group mb-4"> <label data-toggle="tooltip" title="Three digit CV    code on the back of your card">
+                                                <h6>Nezinu <i class="fa fa-question-circle d-inline"></i></h6>
                                             </label> <input type="text" required class="form-control"> </div>
                                     </div>
                                 </div>
