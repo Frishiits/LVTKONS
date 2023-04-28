@@ -60,7 +60,7 @@ include  ('header.php');
                                             </label> <input type="text" required class="form-control"> </div>
                                     </div>
                                 </div>
-                                <div class="card-footer"> <button type="button" class="subscribe btn btn-primary btn-block shadow-sm"> Confirm Payment </button>
+                                <div class="card-footer"> <button type="button" class="subscribe btn btn-primary btn-block shadow-sm"> Pievienot konsultaciju </button>
                             </form>
                         </div>
                     </div>
