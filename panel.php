@@ -49,7 +49,7 @@ include  ('header.php');
                                 <div class="row">
                                     <div class="col-sm-8">
                                         <div class="form-group"> <label><span class="hidden-xs">
-                                                    <h6>Expiration Date</h6>
+                                                    <h6>nezinu</h6>
                                                 </span></label>
                                             <div class="input-group"> <input type="number" placeholder="MM" name="" class="form-control" required> <input type="number" placeholder="YY" name="" class="form-control" required> </div>
                                         </div>
