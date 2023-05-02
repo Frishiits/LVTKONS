@@ -109,7 +109,25 @@
 			<div class="info"></div>
 		</div>
 	</div>
-
+	<div class="modal fade" id="info-modal" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="modal-body">
+        Modal body text goes here.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script>
   var today = new Date();
@@ -142,11 +160,25 @@ switch (dayOfWeek) {
 }
 
 for (var i = 0; i < gridItems.length; i++) {
-			gridItems[i].addEventListener("click", function() {
-				var day = this.getAttribute("id");
-				alert("Today is " + day);
-			});
-    }
+  gridItems[i].addEventListener("click", function() {
+    var day = this.getAttribute("id");
+
+    // Find the modal element for this grid item
+    var modal = document.getElementById("info-modal");
+
+    // Find the title and body elements inside the modal
+    var modalTitle = modal.querySelector(".modal-title");
+    var modalBody = modal.querySelector(".modal-body");
+
+    // Update the title and body with the appropriate content
+    modalTitle.innerHTML = "Dienas plāns:" + day;
+    modalBody.innerHTML = "Some additional information about " + day;
+
+    // Show the Bootstrap modal for this grid item
+    $(modal).modal('show');
+  });
+}
+
 
 var today = new Date();
 var dayOfWeek = today.getDay();
@@ -174,6 +206,9 @@ for (var i = 0; i < 5; i++) {
 </section>
 
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
 
 <?php
   include('footer.php');
