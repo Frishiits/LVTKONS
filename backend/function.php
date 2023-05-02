@@ -79,7 +79,7 @@ function IsTeacher()
     $domain = array_pop($parts);
     $blocked_domains = array('sk'); // to block sub domain add sk in here
     if (in_array(explode('.', $domain)[0], $blocked_domains)) {
-        header("location:index.php");
+        header("location:sklapa.php");
         exit();
     }
 }

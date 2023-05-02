@@ -28,19 +28,18 @@
 
   <?php
   include('header.php');
-  $email = isset($_SESSION['email']) ? $_SESSION['email'] : '';
-  echo "<script>var userEmail = '$email';</script>";
+
+
+  $parts = explode('@', $_SESSION['email']);
+  $domain = array_pop($parts);
+  $blocked_domains = array('sk'); // to block sub domain add sk in here
+  if (!in_array(explode('.', $domain)[0], $blocked_domains)) {
+    echo '<meta http-equiv="refresh" content="1; URL=sklapa.php" />';
+    exit();
+  }
+
+
   ?>
-  <script>
-    var isTeacher = userEmail.indexOf("@sk") === -1; // returns true if the email does not contain the subdomain "sk"
-
-    // If user is an admin, show the admin-only element
-    if (isTeacher) {
-      document.getElementById("teacher-only").style.display = "block";
-      document.getElementById("teacher-hide").style.style.visibility = "hidden";
-
-    }
-  </script>
   <section class="u-align-center u-clearfix u-gradient u-section-1" id="carousel_1d8f">
     <div class="u-clearfix u-sheet u-sheet-1">
       <div class="u-list u-list-1">
