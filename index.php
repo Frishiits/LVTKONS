@@ -32,7 +32,7 @@
 
   $parts = explode('@', $_SESSION['email']);
   $domain = array_pop($parts);
-  $blocked_domains = array('sk'); // to block sub domain add sk in here
+  $blocked_domains = array('sk');
   if (!in_array(explode('.', $domain)[0], $blocked_domains)) {
     echo '<meta http-equiv="refresh" content="1; URL=sklapa.php" />';
     exit();
