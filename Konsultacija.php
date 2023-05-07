@@ -23,7 +23,7 @@
   <?php
   include('header.php');
   ?>
-  <section class="u-align-center u-clearfix u-section-1">
+  <section class="meklet">
     <div class="u-clearfix u-sheet u-sheet-1">
       <form method="Post" onsubmit="event.preventDefault(); searchAndHide()">
         <input type="text" autocomplete="off" placeholder="Meklēt skolotāju" name="search-bar" id="search-bar" />

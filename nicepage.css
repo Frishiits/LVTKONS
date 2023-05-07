@@ -14,6 +14,12 @@ html {
 body {
   margin: 0;
 }
+
+.meklet{
+text-align: center;
+margin-top: 2rem;
+}
+
 article,
 aside,
 details,
