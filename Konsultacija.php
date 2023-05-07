@@ -27,7 +27,7 @@
     <div class="u-clearfix u-sheet u-sheet-1">
       <form method="Post" onsubmit="event.preventDefault(); searchAndHide()">
         <input type="text" autocomplete="off" placeholder="Meklēt skolotāju" name="search-bar" id="search-bar" />
-        <button type="submit" id="search-button">Search</button>
+        <button type="submit" id="search-button">Meklēt</button>
         <?php
         if (isset($_POST['searchbar']))
           $keyword = $_POST['searchbar'];
