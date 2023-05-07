@@ -20,162 +20,269 @@
   <link rel="stylesheet" href="css/overwrite.css" media="screen">
 
   <style>
-		.grid-container {
-		  display: grid;
-		  grid-template-columns: repeat(5, 1fr);
-		  grid-gap: 10px;
-		  background-color: #2c659f;
-		  color: white;
-		  padding: 10px;
-		  font-size: 1.5rem;
-		  margin-top: 3rem;
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-gap: 10px;
+      background-color: #2c659f;
+      color: white;
+      padding: 10px;
+      font-size: 1.5rem;
+      margin-top: 3rem;
       padding: 4rem;
-		  margin-top: 2rem;
-		}
+      margin-top: 2rem;
+    }
 
-		.grid-item {
-		  border: 1px solid #ccc;
-		  padding: 10px;
-		  text-align: center;
-		  font-size: 1.2rem;
-		}
+    .grid-item {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+      font-size: 1.2rem;
+    }
 
-		.today {
-		  background-color: #fff;
-		  color: black;
-		  font-weight: bold;
-		}
-  	.info {
-		  font-size: 0.8rem;
-		  margin-top: 5px;
-		}
-	</style>
+    .today {
+      background-color: #fff;
+      color: black;
+      font-weight: bold;
+    }
+
+    .info {
+      font-size: 0.8rem;
+      margin-top: 5px;
+    }
+  </style>
 </head>
 
 <body class="u-body u-xl-mode" data-lang="en">
-<?php
+  <?php
   include('header.php');
   $parts = explode('@', $_SESSION['email']);
   $domain = array_pop($parts);
   $blocked_domains = array('sk'); // to block sub domain add sk in here
   if (!in_array(explode('.', $domain)[0], $blocked_domains)) {
-     echo'<meta http-equiv="refresh" content="0; URL=block.php" />';
-      
+    echo '<meta http-equiv="refresh" content="0; URL=block.php" />';
+
   }
   //TODO: either a table or a grid that displays students who will go to cons.
+  $today = date("Y-m-d");
+  $result = $pdo->query("SELECT * FROM pieteikums 
+  INNER JOIN Konsultācija ON pieteikums.id_konsultacijas = Konsultācija.konsultācija_id 
+  INNER JOIN skolotajs ON pieteikums.id_skolotajs = skolotajs.skolotajs_id 
+  INNER JOIN skolnieks ON pieteikums.id_skolnieks = skolnieks.skolnieks_id 
+  WHERE Konsultācija.laiks = '$today'");
+
+
+  if (!$result) {
+    die("Error retrieving data: " . $pdo->error());
+  }
+  $data = array();
+  while ($row = $result->fetchAll()) {
+    $data[] = $row;
+  }
+  $json_data = json_encode($data);
   ?>
-<section class="u-align-center u-clearfix u-section-1">
+
+  <section class="u-align-center u-clearfix u-section-1">
     <div class="u-clearfix u-sheet u-sheet-1">
-    
-    <div class="grid-container">
-		<div class="grid-item" id="Pirmdiena">
-			Pirmdiena
-			<div class="info"></div>
-		</div>
-		<div class="grid-item" id="Otrdiena">
-			Otrdiena
-			<div class="info"></div>
-		</div>
-		<div class="grid-item" id="Trešdiena">
-			Trešdiena
-			<div class="info"></div>
-		</div>
-		<div class="grid-item" id="Ceturtdiena">
-			Ceturtdiena
-			<div class="info"></div>
-		</div>
-		<div class="grid-item" id="Piektdiena">
-			Piektdiena
-			<div class="info"></div>
-		</div>
-    <div class="grid-item" id="Pirmdiena">
-			Pirmdiena
-			<div class="info"></div>
-		</div>
-		<div class="grid-item" id="Otrdiena">
-			Otrdiena
-			<div class="info"></div>
-		</div>
-		<div class="grid-item" id="Trešdiena">
-			Trešdiena
-			<div class="info"></div>
-		</div>
-		<div class="grid-item" id="Ceturtdiena">
-			Ceturtdiena
-			<div class="info"></div>
-		</div>
-		<div class="grid-item" id="Piektdiena">
-			Piektdiena
-			<div class="info"></div>
-		</div>
-	</div>
+
+      <div class="grid-container">
+        <div class="grid-item" id="grid-item-1">
+          Pirmdiena
+          <div class="info"></div>
+        </div>
+        <div class="grid-item" id="grid-item-2">
+          Otrdiena
+          <div class="info"></div>
+        </div>
+        <div class="grid-item" id="grid-item-3">
+          Trešdiena
+          <div class="info"></div>
+        </div>
+        <div class="grid-item" id="grid-item-4">
+          Ceturtdiena
+          <div class="info"></div>
+        </div>
+        <div class="grid-item" id="grid-item-5">
+          Piektdiena
+          <div class="info"></div>
+        </div>
+        <div class="grid-item" id="Pirmdiena">
+          Pirmdiena
+          <div class="info"></div>
+        </div>
+        <div class="grid-item" id="Otrdiena">
+          Otrdiena
+          <div class="info"></div>
+        </div>
+        <div class="grid-item" id="Trešdiena">
+          Trešdiena
+          <div class="info"></div>
+        </div>
+        <div class="grid-item" id="Ceturtdiena">
+          Ceturtdiena
+          <div class="info"></div>
+        </div>
+        <div class="grid-item" id="Piektdiena">
+          Piektdiena
+          <div class="info"></div>
+        </div>
+      </div>
+      <div id="modal-container"></div>
 
 
-<script>
-  var today = new Date();
-var dayOfWeek = today.getDay();
-var gridItems = document.getElementsByClassName("grid-item");
-switch (dayOfWeek) {
-  case 1:
-    gridItems[0].classList.add("today");
-    break;
-  case 2:
-    gridItems[1].classList.add("today");
-    break;
-  case 3:
-    gridItems[2].classList.add("today");
-    break;
-  case 4:
-    gridItems[3].classList.add("today");
-    break;
-  case 5:
-    gridItems[4].classList.add("today");
-    break;
-  case 6:
-    
-    break;
-  case 7:
-   
-    break;
-  default:
-    console.log("Error: invalid day of week");
-}
+      <div class="modal fade" id="info-modal" tabindex="-1" role="dialog" aria-labelledby="modal-title"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modal-title">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" id="modal-body">
+              Modal body text goes here.
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
-for (var i = 0; i < gridItems.length; i++) {
-			gridItems[i].addEventListener("click", function() {
-				var day = this.getAttribute("id");
-				alert("Today is " + day);
-			});
-    }
+      <script>
+        var today = new Date();
+        var dayOfWeek = today.getDay();
+        var gridItems = document.getElementsByClassName("grid-item");
+        switch (dayOfWeek) {
+          case 1:
+            gridItems[0].classList.add("today");
+            break;
+          case 2:
+            gridItems[1].classList.add("today");
+            break;
+          case 3:
+            gridItems[2].classList.add("today");
+            break;
+          case 4:
+            gridItems[3].classList.add("today");
+            break;
+          case 5:
+            gridItems[4].classList.add("today");
+            break;
+          case 6:
 
-var today = new Date();
-var dayOfWeek = today.getDay();
+            break;
+          case 7:
 
-var gridItems = document.getElementsByClassName("info");
-// add so it skips weekends 
-for (var i = 0; i < 5; i++) {
-  var date = new Date();
-  var dayOfWeekIndex = (dayOfWeek + i) % 7;
-  date.setDate(date.getDate() + i - dayOfWeek + 1);
-  var day = date.getDate();
-  var month = date.getMonth() + 1;
-  var dateString = day + "." + month;
-  gridItems[i].innerHTML = dateString;
-}
-  </script>
+            break;
+          default:
+            console.log("Error: invalid day of week");
+        }
+
+        var today = new Date();
+        var dayOfWeek = today.getDay();
+
+        var gridItems = document.getElementsByClassName("info");
+        // add so it skips weekends 
+        for (var i = 0; i < 5; i++) {
+          var date = new Date();
+          var dayOfWeekIndex = (dayOfWeek + i) % 7;
+          date.setDate(date.getDate() + i - dayOfWeek + 1);
+          var day = date.getDate();
+          var month = date.getMonth() + 1;
+          var dateString = day + "." + month;
+          gridItems[i].innerHTML = dateString;
+        }
 
 
 
-
-
-
-	</div>
+        var modalTemplate = `
+  <div class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p><strong>Skolnieks:</strong> {vards} {uzvards}</p>
+      <p><strong>Skolotājs:</strong> {skolotajs_vards} {skolotajs_uzvards}</p>
+      <p><strong>Laiks:</strong> {laiks}</p>
     </div>
-</section>
+  </div>
+`;
+
+        var gridItems = document.querySelectorAll(".grid-item");
+
+        gridItems.forEach(function (gridItem) {
+          gridItem.addEventListener("click", function () {
+            var laiks = this.getAttribute("id");
+            var url = "backend/get_data.php?laiks=" + laiks;
+
+            fetch(url)
+              .then(function (response) {
+                return response.json();
+              })
+              .then(function (data) {
+                var modalContainer = document.getElementById("modal-container");
+
+                // Remove any existing modals
+                modalContainer.innerHTML = "";
+
+                // Create a modal for each record
+                data.forEach(function (record) {
+                  var modalHtml = modalTemplate
+                    .replace("{vards}", record.vards)
+                    .replace("{uzvards}", record.uzvards)
+                    .replace("{skolotajs_vards}", record.skolotajs_vards)
+                    .replace("{skolotajs_uzvards}", record.skolotajs_uzvards)
+                    .replace("{laiks}", record.laiks);
+
+                  var modal = document.createElement("div");
+                  modal.innerHTML = modalHtml;
+                  modalContainer.appendChild(modal);
+
+                  // Display the modal when the user clicks on it
+                  modal.addEventListener("click", function (event) {
+                    if (event.target.classList.contains("close")) {
+                      modal.style.display = "none";
+                    }
+                  });
+
+                  modal.style.display = "block";
+                });
+              })
+              .catch(function (error) {
+                console.error(error);
+              });
+          });
+        });
 
 
 
-<?php
+
+
+
+
+
+
+
+
+
+      </script>
+
+
+
+
+
+
+    </div>
+    </div>
+  </section>
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+
+  <?php
   include('footer.php');
   ?>
 
