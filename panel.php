@@ -51,7 +51,7 @@ include  ('header.php');
                                         <div class="form-group"> <label><span class="hidden-xs">
                                                     <h6>Sākums/Beigas</h6>
                                                 </span></label>
-                                            <div class="input-group"> <input type="number" placeholder="MM" name="" class="form-control" required> <input type="number" placeholder="YY" name="" class="form-control" required> </div>
+                                            <div class="input-group"> <input type="number" placeholder="No" name="" class="form-control" required> <input type="number" placeholder="Līdz" name="" class="form-control" required> </div>
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
