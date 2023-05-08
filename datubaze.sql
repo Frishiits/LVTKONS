@@ -68,8 +68,17 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Konsultācija` (
   `laiks` DATE NOT NULL,
   `sākums` TIME NULL,
   `beigas` TIME NULL,
-  PRIMARY KEY (`konsultācija_id`))
+  `skolotajs_id_fk` INT NOT NULL,
+  PRIMARY KEY (`konsultācija_id`),
+  INDEX `fk_Konsultācija_skolotajs_idx` (`skolotajs_id_fk`),
+  CONSTRAINT `fk_Konsultācija_skolotajs`
+    FOREIGN KEY (`skolotajs_id_fk`)
+    REFERENCES `mydb`.`skolotajs` (`skolotajs_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+)
 ENGINE = InnoDB;
+
 
 
 -- -----------------------------------------------------
@@ -105,3 +114,11 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+
+
+INSERT INTO `skolnieks` (`skolnieks_id`, `vards`, `uzvards`) VALUES
+(1, 'Daniels', 'Vidopskis');
+INSERT INTO `skolotajs` (`skolotajs_id`, `vards`, `uzvards`, `epasts`) VALUES
+(1, 'Skolotajs', 'Uzvards', 'skolotajs.uzvards@lvt.lv'),
+(2, '', '', '');

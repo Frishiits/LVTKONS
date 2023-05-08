@@ -8,23 +8,29 @@ $time = date('H:i:s');
 
 
 // Build the SQL query to fetch data from the database
-$sql = "SELECT k.konsultācija_id, p.prieksmets, s.vards AS skolotaja_vards, s.uzvards AS skolotaja_uzvards, k.kabinets, k.sākums, k.beigas, COUNT(pi.pieteikums_id) AS dalībnieku_skaits
-        FROM Konsultācija k
-        JOIN prieksmets p ON k.prieksmets_id = p.prieksmets_id
-        JOIN skolotajs s ON k.skolotajs_id = s.skolotajs_id
-        LEFT JOIN pieteikums pi ON k.konsultācija_id = pi.id_konsultacijas
-        WHERE TIME(k.sākums) <= '$time' AND TIME(k.beigas) > '$time'
-        GROUP BY k.konsultācija_id, p.prieksmets, s.vards, s.uzvards, k.kabinets, k.sākums, k.beigas
-        ORDER BY k.sākums ASC";
+$sql = "SELECT s.vards AS skolotaja_vards, s.uzvards AS skolotaja_uzvards, 
+sn.vards AS skolnieka_vards, sn.uzvards AS skolnieka_uzvards,
+k.kabinets, k.sākums, k.beigas
+FROM Konsultācija k
+JOIN skolotajs s ON k.skolotajs_id_fk = s.skolotajs_id
+JOIN pieteikums p ON k.konsultācija_id = p.id_konsultacijas
+JOIN skolnieks sn ON p.id_skolnieks = sn.skolnieks_id
+WHERE k.laiks = CURRENT_DATE();
+";
 
 // Execute the SQL query and retrieve the data
 $result = $pdo->query($sql);
 
 if (mysqli_num_rows($result) > 0) {
   // Output the data in JSON format
-  $data = array();
+ 
+  $html = '';
   while($row = mysqli_fetch_assoc($result)) {
-    $data[] = $row;
+    $html .= '<tr>';
+    $html .= '<td>' . $row['name'] . '</td>';
+    $html .= '<td>'. $row['age'] . '</td>';
+  $html .= '<td>' . $row['location'] . '</td>';
+  $html .= '</tr>';
   }
   
   echo json_encode($data);
