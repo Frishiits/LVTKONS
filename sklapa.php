@@ -14,7 +14,7 @@
   <meta name="generator" content="Nicepage 5.6.13, nicepage.com">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <link id="u-theme-google-font" rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
   <link rel="stylesheet" href="css/overwrite.css" media="screen">
@@ -195,79 +195,76 @@
           var dateString = day + "." + month;
           gridItems[i].innerHTML = dateString;
         }
-
-
-
-        var modalTemplate = `
-  <div class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <p><strong>Skolnieks:</strong> {vards} {uzvards}</p>
-      <p><strong>Skolotājs:</strong> {skolotajs_vards} {skolotajs_uzvards}</p>
-      <p><strong>Laiks:</strong> {laiks}</p>
-    </div>
-  </div>
-`;
-
-        var gridItems = document.querySelectorAll(".grid-item");
-
-        gridItems.forEach(function (gridItem) {
-          gridItem.addEventListener("click", function () {
-            var laiks = this.getAttribute("id");
-            var url = "backend/get_data.php?laiks=" + laiks;
-
-            fetch(url)
-              .then(function (response) {
-                return response.json();
-              })
-              .then(function (data) {
-                var modalContainer = document.getElementById("modal-container");
-
-                // Remove any existing modals
-                modalContainer.innerHTML = "";
-
-                // Create a modal for each record
-                data.forEach(function (record) {
-                  var modalHtml = modalTemplate
-                    .replace("{vards}", record.vards)
-                    .replace("{uzvards}", record.uzvards)
-                    .replace("{skolotajs_vards}", record.skolotajs_vards)
-                    .replace("{skolotajs_uzvards}", record.skolotajs_uzvards)
-                    .replace("{laiks}", record.laiks);
-
-                  var modal = document.createElement("div");
-                  modal.innerHTML = modalHtml;
-                  modalContainer.appendChild(modal);
-
-                  // Display the modal when the user clicks on it
-                  modal.addEventListener("click", function (event) {
-                    if (event.target.classList.contains("close")) {
-                      modal.style.display = "none";
-                    }
-                  });
-
-                  modal.style.display = "block";
-                });
-              })
-              .catch(function (error) {
-                console.error(error);
-              });
+        jQuery(document).ready(function() {
+  // Get current date and time
+  var today = new Date();
+  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  
+  // Send AJAX request to retrieve data from database
+  $.ajax({
+    url: "backend/get_data.php",
+    method: "POST",
+    data: {date: date, time: time},
+    success: function(data) {
+      // Check if data is not empty
+      if (data != '') {
+        // Parse JSON data
+        var result = JSON.parse(data);
+        
+        // Loop through each record and create a table row
+        var table_data = '';
+        for (var i = 0; i < result.length; i++) {
+          table_data += '<tr>';
+          table_data += '<td>' + result[i].prieksmets + '</td>';
+          table_data += '<td>' + result[i].skolotaja_vards + ' ' + result[i].skolotaja_uzvards + '</td>';
+          table_data += '<td>' + result[i].kabinets + '</td>';
+          table_data += '<td>' + result[i].sakums + '</td>';
+          table_data += '<td>' + result[i].beigas + '</td>';
+          table_data += '<td>' + result[i].dalibnieku_skaits + '</td>';
+          table_data += '<td><button type="button" class="btn btn-primary view_data" data-toggle="modal" data-target="#myModal" data-id="' + result[i].konsultacija_id + '">View</button></td>';
+          table_data += '</tr>';
+        }
+        
+        // Insert table data into table body
+        $('#table_body').html(table_data);
+        
+        // Open modal when View button is clicked
+        $('.view_data').click(function() {
+          var konsultacija_id = $(this).data('id');
+          
+          // Send AJAX request to retrieve data for selected record
+          $.ajax({
+            url: "get_record.php",
+            method: "POST",
+            data: {konsultacija_id: konsultacija_id},
+            success: function(data) {
+              // Parse JSON data
+              var record = JSON.parse(data);
+              
+              // Display record data in modal
+              $('#prieksmets').text(record.prieksmets);
+              $('#skolotajs').text(record.skolotaja_vards + ' ' + record.skolotaja_uzvards);
+              $('#kabinets').text(record.kabinets);
+              $('#sakums').text(record.sakums);
+              $('#beigas').text(record.beigas);
+              $('#dalibnieki').text(record.dalibnieku_skaits);
+            }
           });
         });
-
-
-
-
-
-
-
+      } else {
+        // Display message if no data is found
+        $('#table_body').html('<tr><td colspan="7">No data found.</td></tr>');
+      }
+    }
+  });
+});
 
 
 
 
 
       </script>
-
 
 
 
@@ -289,3 +286,16 @@
 </body>
 
 </html>
+
+<!--
+  214:1 Uncaught SyntaxError: Unexpected token '<', "<br />
+<b>"... is not valid JSON
+    at JSON.parse (<anonymous>)
+    at Object.success (sklapa.php:248:27)
+    at c (jquery.js:2:28294)
+    at Object.fireWith [as resolveWith] (jquery.js:2:29039)
+    at l (jquery.js:2:79800)
+    at XMLHttpRequest.<anonymous> (jquery.js:2:82254)
+
+
+    fix this error for ajax
