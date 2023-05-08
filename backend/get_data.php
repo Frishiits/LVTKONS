@@ -19,23 +19,20 @@ WHERE k.laiks = CURRENT_DATE();
 ";
 
 // Execute the SQL query and retrieve the data
+try{
 $result = $pdo->query($sql);
 
-if (mysqli_num_rows($result) > 0) {
-  // Output the data in JSON format
- 
-  $html = '';
-  while($row = mysqli_fetch_assoc($result)) {
-    $html .= '<tr>';
-    $html .= '<td>' . $row['name'] . '</td>';
-    $html .= '<td>'. $row['age'] . '</td>';
-  $html .= '<td>' . $row['location'] . '</td>';
-  $html .= '</tr>';
+if ($result->rowCount() > 0) {
+  echo "<table><tr><th>Konsultācija ID</th><th>Iela</th><th>Kabinets</th><th>Laiks</th><th>Sākums</th><th>Beigas</th><th>Skolotāja vārds</th><th>Skolotāja uzvārds</th><th>Skolotāja epasts</th></tr>";
+  while($row = $result->fetch(PDO::FETCH_ASSOC)) {
+    echo "<tr><td>".$row["konsultācija_id"]."</td><td>".$row["iela"]."</td><td>".$row["kabinets"]."</td><td>".$row["laiks"]."</td><td>".$row["sākums"]."</td><td>".$row["beigas"]."</td><td>".$row["vards"]."</td><td>".$row["uzvards"]."</td><td>".$row["epasts"]."</td></tr>";
   }
-  
-  echo json_encode($data);
+  echo "</table>";
 } else {
-  echo "0 results";
+  echo "Nav atrasta neviena konsultācija.";
+}
+} catch(PDOException $e) {
+echo "Kļūda: " . $e->getMessage();
 }
 
 ?>
