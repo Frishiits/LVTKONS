@@ -183,40 +183,43 @@
 						console.log("Error: invalid day of week");
 				}
 				var today = new Date();
-				var dayOfWeek = today.getDay();
-				var gridItems = document.getElementsByClassName("info");
-				// add so it skips weekends 
-				for (var i = 0; i < 5; i++) {
-					var date = new Date();
-					var dayOfWeekIndex = (dayOfWeek + i) % 7;
-					date.setDate(date.getDate() + i - dayOfWeek + 1);
-					var day = date.getDate();
-					var month = date.getMonth() + 1;
-					var year = date.getFullYear();
-					var dateString = day + "." + month;
-					
-					gridItems[i].innerHTML = dateString;
-				}
-				var date = new Date();
-				var pass = year + "-" +month + "-" + date.getDate();
-				$(document).ready(function () {
-					$('.grid-item').click(function () {
-						var day = $(this).data('day');
-						$('#day').text('Pieteiktie: ' + day);
-						$.ajax({
 
-							url: 'backend/get_data.php',
-							type: 'post',
-							data: {
-								pass: pass
-							},
-							success: function (response) {
-								$('#modal-body-data').html(response);
-								$('#myModal').modal('show');
-							}
-						});
-					});
-				});
+var gridItems = document.getElementsByClassName("info");
+// add so it skips weekends 
+for (var i = 0; i < 5; i++) {
+  var date = new Date();
+  date.setDate(date.getDate() + i - dayOfWeek + 1);
+  var day = date.getDate();
+  var month = date.getMonth() + 1;
+  var year = date.getFullYear();
+  var dateString = year + "-" + month + "-" + day;
+
+
+  gridItems[i].innerHTML = dateString;
+}
+
+$(document).ready(function () {
+  $('.grid-item').click(function () {
+    var myString = $(this).text();
+	dateString = myString.replace(/[^\d-]+/g, '');
+
+    $('#day').text('Pieteiktie: ' + dateString);
+    $.ajax({
+      url: 'backend/get_data.php',
+      type: 'post',
+      data: {
+        date: dateString
+      },
+      success: function (response) {
+        $('#modal-body-data').html(response);
+        $('#myModal').modal('show');
+      }
+    });
+  });
+});
+
+
+
 			</script>
 
 
