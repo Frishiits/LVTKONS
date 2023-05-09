@@ -3,8 +3,7 @@ include("database.php");
 // Establish database connection
 
 // Get current day and time
-$day = date('N'); // Returns 1 (Monday) through 7 (Sunday)
-$time = date('H:i:s');
+var_dump($_POST);
 
 
 // Build the SQL query to fetch data from the database
