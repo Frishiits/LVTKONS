@@ -32,7 +32,7 @@
   <header class="u-clearfix u-custom-color-1 u-header u-sticky u-header" id="sec-fe6d">
     <div
       class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-sheet-1">
-      <a href="Home.html" class="u-hover-feature u-image u-logo u-image-1" data-image-width="198" data-image-height="50"
+      <a href="index.php" class="u-hover-feature u-image u-logo u-image-1" data-image-width="198" data-image-height="50"
         title="Home">
         <img src="images/logo_new_balts.png" class="u-logo-image u-logo-image-1">
       </a>
