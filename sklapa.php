@@ -198,6 +198,7 @@ for (var i = 0; i < 5; i++) {
   gridItems[i].innerHTML = dateString;
 }
 
+
 $(document).ready(function () {
   $('.grid-item').click(function () {
     var myString = $(this).text();
