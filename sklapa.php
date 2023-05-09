@@ -96,7 +96,7 @@
           Otrdiena
           <div class="info"></div>
         </div>
-        <div class="grid-item" id="grid-item-2" data-day="Otrdiena">
+        <div class="grid-item" id="grid-item-2" data-day="Trešdiena">
           Trešdiena
           <div class="info"></div>
         </div>
@@ -136,15 +136,12 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title" id="myModalLabel">Information for <span id="day"></span></h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      </div>
+        <h4 class="modal-title" id="myModalLabel"><span id="day"></span></h4>
+		</div>
       <div class="modal-body">
         <table class="table">
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Age</th>
             </tr>
           </thead>
           <tbody id="modal-body-data">
@@ -160,7 +157,7 @@
   $(document).ready(function() {
     $('.grid-item').click(function() {
       var day = $(this).data('day');
-      $('#day').text(day);
+      $('#day').text('Pieteiktie: '+day);
 
       $.ajax({
         url: 'backend/get_data.php',
