@@ -58,15 +58,15 @@
           <ul class="u-nav u-unstyled u-nav-1">
             <li class="u-nav-item"><a
                 class="u-button-style u-nav-link u-text-active-palette-4-light-3 u-text-body-alt-color u-text-hover-custom-color-3"
-                href="Home.html" style="padding: 10px 20px;">Sākumlapa</a>
+                href="index.php" style="padding: 10px 20px;">Sākumlapa</a>
             </li>
             <li class="u-nav-item"><a
                 class="u-button-style u-nav-link u-text-active-palette-4-light-3 u-text-body-alt-color u-text-hover-custom-color-3"
-                href="#" style="padding: 10px 20px;">TEST2 man liekas</a>
+                href="pieteikties.php" style="padding: 10px 20px;">Pieteikties</a>
             </li>
             <li class="u-nav-item"><a
                 class="u-button-style u-nav-link u-text-active-palette-4-light-3 u-text-body-alt-color u-text-hover-custom-color-3"
-                href="#" style="padding: 10px 20px;">VNK3</a>
+                href="Info.php" style="padding: 10px 20px;">Informācija</a>
             </li>
           </ul>
         </div>
@@ -78,11 +78,11 @@
               <div class="u-menu-close"></div>
               <ul
                 class="u-align-center u-custom-font u-font-georgia u-nav u-popupmenu-items u-spacing-5 u-text-white u-unstyled u-nav-2">
-                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.html">Sākumlapa</a>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="index.php">Sākumlapa</a>
                 </li>
-                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#">TEST2 man liekas</a>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="pieteikties.php">Pieteikties</a>
                 </li>
-                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#">VNK3</a>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Info.php">Informācija</a>
                 </li>
               </ul>
             </div>
