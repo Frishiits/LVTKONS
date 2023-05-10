@@ -192,7 +192,7 @@ function is_selected($value, $selected)
       if (!cell.textContent) {
         return;
       }
-      alert(`You clicked on ${cell.textContent} ${months[currentDate.getMonth()]} ${currentDate.getFullYear()}`);
+      alert(`Tu esi izvēlējies ${cell.textContent} ${months[currentDate.getMonth()]} ${currentDate.getFullYear()}`);
     });</script>
 
   <?php
