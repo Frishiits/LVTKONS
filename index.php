@@ -54,6 +54,7 @@
         $rows = $result->fetchAll();
         if (!empty($rows)) {
           foreach ($rows as $row) {
+            
             $formatted_date = $row['month'];
 
 
