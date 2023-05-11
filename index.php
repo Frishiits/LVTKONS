@@ -49,9 +49,19 @@
         <?php
 
         echo '<div class="same-line">';
-        // TODO:
-        $result = $pdo->query("SELECT *,DATE_FORMAT(laiks, '%e %M') AS month FROM pieteikums,konsultācija,prieksmets,skolotajs WHERE id_skolnieks = (SELECT skolnieks_id FROM skolnieks WHERE vards = 'Daniels');");
-        $rows = $result->fetchAll();
+        //  prieksmets.*,     JOIN prieksmets ON pieteikums.id_prieksmets = prieksmets_id
+        $result = $pdo->query("
+    SELECT DISTINCT pieteikums.*, konsultācija.*,  skolotajs.*, DATE_FORMAT(laiks, '%e %M') AS month
+    FROM pieteikums
+    JOIN konsultācija ON pieteikums.id_konsultacijas = konsultācija_id
+    JOIN skolotajs ON pieteikums.id_skolotajs = skolotajs_id
+    WHERE pieteikums.id_skolnieks = (
+        SELECT skolnieks_id
+        FROM skolnieks
+        WHERE vards = 'Daniels'
+    );
+");
+$rows = $result->fetchAll();
         if (!empty($rows)) {
           foreach ($rows as $row) {
             
@@ -59,7 +69,7 @@
 
 
             echo '<div class="alert alert-warning"   role="alert">';
-            echo ' <p class="u-text u-align-left" > <b>' . $row['prieksmets'] . '</b> <br> ' . $row['iela'] . ': ' . $row['kabinets'] . ' <br> Datums: ' . $formatted_date . '</p>';
+            echo ' <p class="u-text u-align-left" > <b> $row[prieksmets]  </b> <br> ' . $row['iela'] . ': ' . $row['kabinets'] . ' <br> Datums: ' . $formatted_date . '</p>';
             //echo implode(', ', $errors);
             echo '</div>';
           }
