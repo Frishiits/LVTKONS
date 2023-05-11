@@ -59,7 +59,8 @@
         SELECT skolnieks_id
         FROM skolnieks
         WHERE vards = 'Daniels'
-    );
+    )AND konsultācija.laiks >= DATE(NOW()) - INTERVAL (WEEKDAY(NOW()) + 1) DAY
+    AND konsultācija.laiks < DATE(NOW()) + INTERVAL (6 - WEEKDAY(NOW())) DAY + INTERVAL 1 DAY;
 ");
 $rows = $result->fetchAll();
         if (!empty($rows)) {
