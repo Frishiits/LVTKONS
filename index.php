@@ -43,7 +43,7 @@
   <section class="u-align-center u-clearfix u-gradient u-section-1" id="carousel_1d8f">
     <div class="u-clearfix u-sheet u-sheet-1">
       <div class="u-list u-list-1">
-        <h2 class="u-align-left">Sveiki,
+        <h2 class="u-align-left">Sveiks
           <?= substr($_SESSION['username'], 0, -1); ?>!
         </h2>
         <?php

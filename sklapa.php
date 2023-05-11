@@ -242,16 +242,3 @@ $(document).ready(function () {
 </body>
 
 </html>
-
-<!--
-  214:1 Uncaught SyntaxError: Unexpected token '<', "<br />
-<b>"... is not valid JSON
-	at JSON.parse (<anonymous>)
-	at Object.success (sklapa.php:248:27)
-	at c (jquery.js:2:28294)
-	at Object.fireWith [as resolveWith] (jquery.js:2:29039)
-	at l (jquery.js:2:79800)
-	at XMLHttpRequest.<anonymous> (jquery.js:2:82254)
-
-
-	fix this error for ajax
