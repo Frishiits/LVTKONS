@@ -98,8 +98,10 @@ if (isset($_POST['submit1'])) {
   // If there are no errors, insert the form data into the database
   if (empty($errors)) {
     // Insert the form data into the database using an SQL query
-    $pdo->query("INSERT INTO `pieteikums`  ( `id_skolotajs`, `id_skolnieks `) VALUES
-                    ('" . $_POST['id_skolotajs'] . "', '" . $_POST['id_skolnieks '] . "')");
+    $pdo->query("INSERT INTO `pieteikums` (`pieteikums_id`, `id_skolotajs`, `id_skolnieks`, `id_konsultacijas`)
+    VALUES (NULL, '1', (SELECT `id_skolnieks` FROM `skolnieks` WHERE `vards` = '".$_POST['username']."'), '1')");
+
+
     // Redirect the user to a success page or display a success message
     header('location:index.php');
   }
