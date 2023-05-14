@@ -1,30 +1,31 @@
 <!DOCTYPE html>
-<html style="font-size: 16px;" lang="en">
+<html style="font-size: 16px;" lang="lv">
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
   <meta name="keywords" content="">
   <meta name="description" content="">
-  <title></title>
+  <title>Admin Panel</title>
   <link rel="stylesheet" href="../nicepage.css" media="screen">
   <meta name="generator" content="Nicepage 5.6.13, nicepage.com">
   <link rel="stylesheet" href="admin.css" media="screen">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.3.1/css/all.min.css" rel="stylesheet">z
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.3.1/css/all.min.css" rel="stylesheet">
 
   <link id="u-theme-google-font" rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+
 </head>
 
 <body>
  
-  <div class="main-content">
+<div class="main-content">
     <!-- Top navbar -->
     <nav class="navbar navbar-tp navbar-expand-md navbar-dark bg-primary" id="navbar-main">
       <div class="container-fluid">
         <!-- Brand -->
-        <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="./index.html">Admin panelis  </a>
+        <a class="navbar-brand" href="./index.html">Admin panelis</a>
         <!-- Form -->
         <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
           <div class="form-group mb-0">
@@ -42,15 +43,15 @@
             <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <div class="media align-items-center">
                 <span class="avatar avatar-sm rounded-circle">
-                  <img alt="Image placeholder" src=" ">
+                  <img alt="Image placeholder" src="">
                 </span>
                 <div class="media-body ml-2 d-none d-lg-block">
-                  <span class="mb-0 text-sm  font-weight-bold">Admin Cilveka vards</span>
+                  <span class="mb-0 text-sm font-weight-bold">Admin Cilveka vards</span>
                 </div>
               </div>
             </a>
             <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
-              <div class=" dropdown-header noti-title">
+              <div class="dropdown-header noti-title">
                 <h6 class="text-overflow m-0">Welcome!</h6>
               </div>
               <a href="./examples/profile.html" class="dropdown-item">
@@ -82,9 +83,7 @@
     <div class="container-fluid text-center">
       <p class="mt-5">Add your content here...</p>
     </div>
-    <footer class="footer" style="margin-top: 70%;">
-      
-    </footer>
+    <footer class="footer" style="margin-top: 70%;"></footer>
   </div>
 </body>
 
