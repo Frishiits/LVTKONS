@@ -71,7 +71,7 @@
     margin: 0;
     text-align: left;
     color: #525f7f;
-    background-color: #f8f9fe;
+    background-image: linear-gradient(white, #478ac9);
   }
   
   [tabindex='-1']:focus {
