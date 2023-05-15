@@ -136,6 +136,12 @@
       <!--
         //Phone view only 
         -->
+
+
+
+        <?php 
+
+        ?>
       <div class="card mobile-show" style="width: 18.5rem;">
         <div class="card-body">
           <h5 class="card-title">Skolotajs Labais</h5>
@@ -146,15 +152,7 @@
         </ul>
       </div>
 
-      <div id="SearchView" class="card-search" style="width: 20.5rem;">
-        <div class="card-body-search">
-          <h5 class="card-title">Skolotajs Labais</h5>
-        </div>
-        <ul class="list-group list-group-flush">
-          <a class="list-group-item">Pirmdien Ve A-203 </a>
-          <a class="list-group-item">Otrdiena V A-201</a>
-        </ul>
-      </div>
+     
     </div>
   </section>
   <div class="kajene">
