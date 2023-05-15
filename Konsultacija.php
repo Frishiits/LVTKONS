@@ -90,7 +90,8 @@
           </thead>
           <tbody class="u-table-alt-grey-5 u-table-body u-white u-table-body-1">
             <?php
-            $result = $pdo->query("SELECT *,DAYOFWEEK(laiks) AS day_number,DATE_FORMAT(sākums,'%H:%i') AS laiks_time,DATE_FORMAT(beigas,'%H:%i') AS laiks_time1 FROM `konsultācija`");
+            $result = $pdo->query("SELECT *,DAYOFWEEK(laiks) AS day_number,DATE_FORMAT(sākums,'%H:%i') AS laiks_time,DATE_FORMAT(beigas,'%H:%i') AS laiks_time1 FROM `konsultācija`
+            JOIN skolotajs ON konsultācija.skolotajs_id_fk = skolotajs_id");
             $rows = $result->fetchAll();
 
             foreach ($rows as $row) {
