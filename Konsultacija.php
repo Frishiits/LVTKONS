@@ -104,26 +104,26 @@
               ?>
               <tr style="height: 51px;">
                 <td class="u-border-1 u-border-grey-75 u-table-cell">
-                  <?= $row['vards'];?>
+                  <?= $row['vards']; ?>
                   <?= $row['uzvards']; ?>
                 </td>
                 <?php
                 if ($day_of_week == 'Pirmdiena') {
-                  echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7">'.$row['iela'].' <br> '.$laiks_time.'-'.$laiks_time1.'</td>';
-                } else 
-                echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7"></td>';
+                  echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7">' . $row['iela'] . ' <br> ' . $laiks_time . '-' . $laiks_time1 . '</td>';
+                } else
+                  echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7"></td>';
                 if ($day_of_week == 'Otrdiena') {
-                  echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7">'.$row['iela'].' <br> '.$laiks_time.'-'.$laiks_time1.'</td>';
-                } else 
-                echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7"></td>';
+                  echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7">' . $row['iela'] . ' <br> ' . $laiks_time . '-' . $laiks_time1 . '</td>';
+                } else
+                  echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7"></td>';
                 if ($day_of_week == 'Trešdiena') {
-                  echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7">'.$row['iela'].' <br> '.$laiks_time.'-'.$laiks_time1.'</td>';
-                } else 
-                echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7"></td>';
+                  echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7">' . $row['iela'] . ' <br> ' . $laiks_time . '-' . $laiks_time1 . '</td>';
+                } else
+                  echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7"></td>';
                 if ($day_of_week == 'Ceturtdiena') {
-                  echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7">'.$row['iela'].' <br> '.$laiks_time.'-'.$laiks_time1.'</td>';
-                } else 
-                echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7"></td>';
+                  echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7">' . $row['iela'] . ' <br> ' . $laiks_time . '-' . $laiks_time1 . '</td>';
+                } else
+                  echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7"></td>';
                 ?>
               </tr>
               <?php
@@ -136,7 +136,7 @@
       <!--
         //Phone view only 
         -->
-      <?php 
+      <?php
 
       ?>
       <div class="card mobile-show" style="width: 18.5rem;">
@@ -149,14 +149,14 @@
         </ul>
       </div>
 
-     
+
     </div>
   </section>
   <div class="kajene">
-  <?php
-  include('footer.php');
-  ?>
-</div>
+    <?php
+    include('footer.php');
+    ?>
+  </div>
 
 </body>
 

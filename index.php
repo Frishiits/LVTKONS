@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="font-size: 16px;" lang="en">
+<html style="font-size: 16px;" lang="lv">
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -62,10 +62,10 @@
     )AND konsultācija.laiks >= DATE(NOW()) - INTERVAL (WEEKDAY(NOW()) + 1) DAY
     AND konsultācija.laiks < DATE(NOW()) + INTERVAL (6 - WEEKDAY(NOW())) DAY + INTERVAL 1 DAY;
 ");
-$rows = $result->fetchAll();
+        $rows = $result->fetchAll();
         if (!empty($rows)) {
           foreach ($rows as $row) {
-            
+
             $formatted_date = $row['month'];
 
 
