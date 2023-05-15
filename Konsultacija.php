@@ -136,12 +136,9 @@
       <!--
         //Phone view only 
         -->
+      <?php 
 
-
-
-        <?php 
-
-        ?>
+      ?>
       <div class="card mobile-show" style="width: 18.5rem;">
         <div class="card-body">
           <h5 class="card-title">Skolotajs Labais</h5>
