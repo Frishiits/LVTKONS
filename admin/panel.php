@@ -35,9 +35,9 @@
     <nav class="navbar navbar-tp navbar-expand-md navbar-dark bg-primary" id="navbar-main">
       <div class="container-fluid">
         <!-- Brand -->
-        
-          <a class="navbar-brand" href="../index.php">Liepajas Valsts tehnikums</a>
-       
+
+        <a class="navbar-brand" href="../index.php">Liepajas Valsts tehnikums</a>
+
         <!-- Toggle button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
           aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -81,6 +81,20 @@
 
     <div class="container-fluid text-center">
       <p class="mt-5">Add your content here...</p>
+      <form class="cf">
+        <div class="half left cf">
+          <input type="text" id="input-name" placeholder="Name">
+          <input type="email" id="input-email" placeholder="Email address">
+          <input type="text" id="input-subject" placeholder="Subject">
+        </div>
+        <div class="half right cf">
+          <textarea name="message" type="text" id="input-message" placeholder="Message"></textarea>
+        </div>
+        <input type="submit" value="Submit" id="input-submit">
+      </form>
+
+
+
     </div>
 
     <footer class="footer" style="margin-top: 70%;"></footer>
