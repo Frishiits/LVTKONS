@@ -78,6 +78,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Konsultācija` (
     REFERENCES `mydb`.`skolotajs` (`skolotajs_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
+    CONSTRAINT `fk_Konsultācija_prieksmets`
   FOREIGN KEY (`prieksmets_id_fk`)
   REFERENCES `mydb`.`prieksmets` (`prieksmets_id`)
     ON DELETE NO ACTION
