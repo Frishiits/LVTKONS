@@ -72,15 +72,15 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Konsultācija` (
   `prieksmets_id_fk` INT NOT NULL,
   PRIMARY KEY (`konsultācija_id`),
   INDEX `fk_Konsultācija_skolotajs_idx` (`skolotajs_id_fk`),
-  INDEX `fk_Konsultācijas_prieksmets_id `(`prieksmets_id_fk`),
+  INDEX `fk_Konsultācijas_prieksmets_idx`(`prieksmets_id_fk`),
   CONSTRAINT `fk_Konsultācija_skolotajs`
     FOREIGN KEY (`skolotajs_id_fk`)
     REFERENCES `mydb`.`skolotajs` (`skolotajs_id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION
-    CONSTRAINT `fk_Konsultācija_prieksmets`
-  FOREIGN KEY (`prieksmets_id_fk`)
-  REFERENCES `mydb`.`prieksmets` (`prieksmets_id`)
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Konsultācija_prieksmets`
+    FOREIGN KEY (`prieksmets_id_fk`)
+    REFERENCES `mydb`.`prieksmets` (`prieksmets_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
 )
