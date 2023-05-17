@@ -22,9 +22,10 @@ margin-top: 2rem;
 
 .meklet2{
   color: rgb(0, 0, 0);
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   border-radius: .3rem;
   text-align: center;
+  padding-bottom: .3rem;
 }
 
 .meklet2:hover{
