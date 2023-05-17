@@ -51,17 +51,19 @@
         echo '<div class="same-line">';
         //  prieksmets.*,     JOIN prieksmets ON pieteikums.id_prieksmets = prieksmets_id
         $result = $pdo->query("
-    SELECT DISTINCT pieteikums.*, konsultācija.*,  skolotajs.*, DATE_FORMAT(laiks, '%e %M') AS month
-    FROM pieteikums
-    JOIN konsultācija ON pieteikums.id_konsultacijas = konsultācija_id
-    JOIN skolotajs ON pieteikums.id_skolotajs = skolotajs_id
-    WHERE pieteikums.id_skolnieks = (
-        SELECT skolnieks_id
-        FROM skolnieks
-        WHERE vards = 'Daniels'
-    )AND konsultācija.laiks >= DATE(NOW()) - INTERVAL (WEEKDAY(NOW()) + 1) DAY
-    AND konsultācija.laiks < DATE(NOW()) + INTERVAL (6 - WEEKDAY(NOW())) DAY + INTERVAL 1 DAY;
-");
+        SELECT DISTINCT pieteikums.*, konsultācija.*, skolotajs.*, prieksmets.*, DATE_FORMAT(laiks, '%e %M') AS month
+        FROM pieteikums
+        JOIN konsultācija ON pieteikums.id_konsultacijas = konsultācija_id
+        JOIN skolotajs ON pieteikums.id_skolotajs = skolotajs_id
+        JOIN prieksmets ON konsultācija.prieksmets_id_fk = prieksmets_id
+        WHERE pieteikums.id_skolnieks = (
+            SELECT skolnieks_id
+            FROM skolnieks
+            WHERE vards = 'Daniels'
+        )AND konsultācija.laiks >= DATE(NOW()) - INTERVAL (WEEKDAY(NOW()) + 1) DAY
+        AND konsultācija.laiks < DATE(NOW()) + INTERVAL (6 - WEEKDAY(NOW())) DAY + INTERVAL 1 DAY;
+    ");
+    
         $rows = $result->fetchAll();
         if (!empty($rows)) {
           foreach ($rows as $row) {
@@ -70,7 +72,7 @@
 
 
             echo '<div class="alert alert-warning"   role="alert">';
-            echo ' <p class="u-text u-align-left" > <b> $row[prieksmets]  </b> <br> ' . $row['iela'] . ': ' . $row['kabinets'] . ' <br> Datums: ' . $formatted_date . '</p>';
+            echo ' <p class="u-text u-align-left" > <b>' . $row['prieksmets'] . '  </b> <br> ' . $row['iela'] . ': ' . $row['kabinets'] . ' <br> Datums: ' . $formatted_date . '</p>';
             //echo implode(', ', $errors);
             echo '</div>';
           }
