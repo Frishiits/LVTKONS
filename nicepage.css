@@ -21,7 +21,10 @@ margin-top: 2rem;
 }
 
 .meklet2{
-  color: black;
+  color: rgb(0, 0, 0);
+  font-size: 1.2rem;
+  border-radius: .3rem;
+  text-align: center;
 }
 
 .meklet2:hover{
@@ -20455,6 +20458,7 @@ a.pswp__share--download:hover {
   padding: 10px;
   font-weight: inherit;
   position: inherit;
+  font-size: 1.2rem;
 }
 .u-table th:empty:before,
 .u-table td:empty:before {
@@ -41634,8 +41638,8 @@ a.u-link.u-text-hover-grey-90:hover {
         font-weight: 400;
         font-size: 2.25rem;
         line-height: 1.1;
-        margin-top: 20px;
-        margin-bottom: 20px;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
         }
         h3
         {
