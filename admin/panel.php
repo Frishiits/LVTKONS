@@ -103,7 +103,6 @@
 
     </div>
 
-    <footer class="footer" style="margin-top: 70%;"></footer>
   </div>
 </body>
 
