@@ -90,7 +90,8 @@
           </thead>
           <tbody class="u-table-alt-grey-5 u-table-body u-white u-table-body-1">
             <?php
-            $result = $pdo->query("SELECT *,DAYOFWEEK(laiks) AS day_number,DATE_FORMAT(sākums,'%H:%i') AS laiks_time,DATE_FORMAT(beigas,'%H:%i') AS laiks_time1 FROM `konsultācija`");
+            $result = $pdo->query("SELECT *,DAYOFWEEK(laiks) AS day_number,DATE_FORMAT(sākums,'%H:%i') AS laiks_time,DATE_FORMAT(beigas,'%H:%i') AS laiks_time1 FROM `konsultācija`
+            JOIN skolotajs ON konsultācija.skolotajs_id_fk = skolotajs_id");
             $rows = $result->fetchAll();
 
             foreach ($rows as $row) {
@@ -103,26 +104,26 @@
               ?>
               <tr style="height: 51px;">
                 <td class="u-border-1 u-border-grey-75 u-table-cell">
-                  <?= $row['vards'];?>
+                  <?= $row['vards']; ?>
                   <?= $row['uzvards']; ?>
                 </td>
                 <?php
                 if ($day_of_week == 'Pirmdiena') {
-                  echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7">'.$row['iela'].' <br> '.$laiks_time.'-'.$laiks_time1.'</td>';
-                } else 
-                echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7"></td>';
+                  echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7">' . $row['iela'] . ' <br> ' . $laiks_time . '-' . $laiks_time1 . '</td>';
+                } else
+                  echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7"></td>';
                 if ($day_of_week == 'Otrdiena') {
-                  echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7">'.$row['iela'].' <br> '.$laiks_time.'-'.$laiks_time1.'</td>';
-                } else 
-                echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7"></td>';
+                  echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7">' . $row['iela'] . ' <br> ' . $laiks_time . '-' . $laiks_time1 . '</td>';
+                } else
+                  echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7"></td>';
                 if ($day_of_week == 'Trešdiena') {
-                  echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7">'.$row['iela'].' <br> '.$laiks_time.'-'.$laiks_time1.'</td>';
-                } else 
-                echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7"></td>';
+                  echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7">' . $row['iela'] . ' <br> ' . $laiks_time . '-' . $laiks_time1 . '</td>';
+                } else
+                  echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7"></td>';
                 if ($day_of_week == 'Ceturtdiena') {
-                  echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7">'.$row['iela'].' <br> '.$laiks_time.'-'.$laiks_time1.'</td>';
-                } else 
-                echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7"></td>';
+                  echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7">' . $row['iela'] . ' <br> ' . $laiks_time . '-' . $laiks_time1 . '</td>';
+                } else
+                  echo '<td class="u-align-center u-border-1 u-border-grey-75 u-table-cell u-table-cell-7"></td>';
                 ?>
               </tr>
               <?php
@@ -135,6 +136,9 @@
       <!--
         //Phone view only 
         -->
+      <?php
+
+      ?>
       <div class="card mobile-show" style="width: 18.5rem;">
         <div class="card-body">
           <h5 class="card-title">Skolotajs Labais</h5>
@@ -145,22 +149,14 @@
         </ul>
       </div>
 
-      <div id="SearchView" class="card-search" style="width: 20.5rem;">
-        <div class="card-body-search">
-          <h5 class="card-title">Skolotajs Labais</h5>
-        </div>
-        <ul class="list-group list-group-flush">
-          <a class="list-group-item">Pirmdien Ve A-203 </a>
-          <a class="list-group-item">Otrdiena V A-201</a>
-        </ul>
-      </div>
+
     </div>
   </section>
   <div class="kajene">
-  <?php
-  include('footer.php');
-  ?>
-</div>
+    <?php
+    include('footer.php');
+    ?>
+  </div>
 
 </body>
 

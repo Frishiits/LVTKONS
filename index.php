@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="font-size: 16px;" lang="en">
+<html style="font-size: 16px;" lang="lv">
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,22 +43,36 @@
   <section class="u-align-center u-clearfix u-gradient u-section-1" id="carousel_1d8f">
     <div class="u-clearfix u-sheet u-sheet-1">
       <div class="u-list u-list-1">
-        <h2 class="u-align-left">Sveiks
+        <h2 class="u-align-left">Sveiks,
           <?= substr($_SESSION['username'], 0, -1); ?>!
         </h2>
         <?php
 
         echo '<div class="same-line">';
-        // TODO:
-        $result = $pdo->query("SELECT *,DATE_FORMAT(laiks, '%e %M') AS month FROM pieteikums,konsultācija,prieksmets,skolotajs WHERE id_skolnieks = (SELECT skolnieks_id FROM skolnieks WHERE vards = 'Daniels');");
+        //  prieksmets.*,     JOIN prieksmets ON pieteikums.id_prieksmets = prieksmets_id
+        $result = $pdo->query("
+        SELECT DISTINCT pieteikums.*, konsultācija.*, skolotajs.*, prieksmets.*, DATE_FORMAT(laiks, '%e %M') AS month
+        FROM pieteikums
+        JOIN konsultācija ON pieteikums.id_konsultacijas = konsultācija_id
+        JOIN skolotajs ON pieteikums.id_skolotajs = skolotajs_id
+        JOIN prieksmets ON konsultācija.prieksmets_id_fk = prieksmets_id
+        WHERE pieteikums.id_skolnieks = (
+            SELECT skolnieks_id
+            FROM skolnieks
+            WHERE vards = 'Daniels'
+        )AND konsultācija.laiks >= DATE(NOW()) - INTERVAL (WEEKDAY(NOW()) + 1) DAY
+        AND konsultācija.laiks < DATE(NOW()) + INTERVAL (6 - WEEKDAY(NOW())) DAY + INTERVAL 1 DAY;
+    ");
+    
         $rows = $result->fetchAll();
         if (!empty($rows)) {
           foreach ($rows as $row) {
+
             $formatted_date = $row['month'];
 
 
             echo '<div class="alert alert-warning"   role="alert">';
-            echo ' <p class="u-text u-align-left" > <b>' . $row['prieksmets'] . '</b> <br> ' . $row['iela'] . ': ' . $row['kabinets'] . ' <br> Datums: ' . $formatted_date . '</p>';
+            echo ' <p class="u-text u-align-left" > <b>' . $row['prieksmets'] . '  </b> <br> ' . $row['iela'] . ': ' . $row['kabinets'] . ' <br> Datums: ' . $formatted_date . '</p>';
             //echo implode(', ', $errors);
             echo '</div>';
           }

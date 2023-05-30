@@ -12,7 +12,7 @@
   <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
   <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
   <meta name="generator" content="Nicepage 5.6.13, nicepage.com">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
   <link id="u-theme-google-font" rel="stylesheet"
@@ -98,8 +98,10 @@ if (isset($_POST['submit1'])) {
   // If there are no errors, insert the form data into the database
   if (empty($errors)) {
     // Insert the form data into the database using an SQL query
-    $pdo->query("INSERT INTO `pieteikums`  ( `id_skolotajs`, `id_skolnieks `) VALUES
-                    ('" . $_POST['id_skolotajs'] . "', '" . $_POST['id_skolnieks '] . "')");
+    $pdo->query("INSERT INTO `pieteikums` (`pieteikums_id`, `id_skolotajs`, `id_skolnieks`, `id_konsultacijas`)
+    VALUES (NULL, '1', (SELECT `id_skolnieks` FROM `skolnieks` WHERE `vards` = '".$_POST['username']."'), '1')");
+
+
     // Redirect the user to a success page or display a success message
     header('location:index.php');
   }

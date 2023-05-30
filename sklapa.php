@@ -31,7 +31,6 @@
 			padding: 10px;
 			font-size: 1.5rem;
 			margin-top: 3rem;
-			padding: 4rem;
 			margin-top: 2rem;
 		}
 
@@ -51,6 +50,10 @@
 		.info {
 			font-size: 0.8rem;
 			margin-top: 5px;
+		}
+
+		.modal-body {
+			text-align: -webkit-center;
 		}
 	</style>
 </head>
@@ -108,26 +111,6 @@
 					Piektdiena
 					<div class="info"></div>
 				</div>
-				<div class="grid-item" id="Pirmdiena">
-					Pirmdiena
-					<div class="info"></div>
-				</div>
-				<div class="grid-item" id="Otrdiena">
-					Otrdiena
-					<div class="info"></div>
-				</div>
-				<div class="grid-item" id="Trešdiena">
-					Trešdiena
-					<div class="info"></div>
-				</div>
-				<div class="grid-item" id="Ceturtdiena">
-					Ceturtdiena
-					<div class="info"></div>
-				</div>
-				<div class="grid-item" id="Piektdiena">
-					Piektdiena
-					<div class="info"></div>
-				</div>
 			</div>
 			<div id="modal-container"></div>
 
@@ -173,51 +156,45 @@
 					case 5:
 						gridItems[4].classList.add("today");
 						break;
-					case 6:
-
-						break;
-					case 7:
-
-						break;
 					default:
 						console.log("Error: invalid day of week");
 				}
 				var today = new Date();
 
-var gridItems = document.getElementsByClassName("info");
-// add so it skips weekends 
-for (var i = 0; i < 5; i++) {
-  var date = new Date();
-  date.setDate(date.getDate() + i - dayOfWeek + 1);
-  var day = date.getDate();
-  var month = date.getMonth() + 1;
-  var year = date.getFullYear();
-  var dateString = year + "-" + month + "-" + day;
+				var gridItems = document.getElementsByClassName("info");
+				// add so it skips weekends 
+				for (var i = 0; i < 5; i++) {
+					var date = new Date();
+					date.setDate(date.getDate() + i - dayOfWeek + 1);
+					var day = date.getDate();
+					var month = date.getMonth() + 1;
+					var year = date.getFullYear();
+					var dateString = year + "-" + month + "-" + day;
 
 
-  gridItems[i].innerHTML = dateString;
-}
+					gridItems[i].innerHTML = dateString;
+				}
 
 
-$(document).ready(function () {
-  $('.grid-item').click(function () {
-    var myString = $(this).text();
-	dateString = myString.replace(/[^\d-]+/g, '');
+				$(document).ready(function () {
+					$('.grid-item').click(function () {
+						var myString = $(this).text();
+						dateString = myString.replace(/[^\d-]+/g, '');
 
-    $('#day').text('Pieteiktie: ' + dateString);
-    $.ajax({
-      url: 'backend/get_data.php',
-      type: 'post',
-      data: {
-        date: dateString
-      },
-      success: function (response) {
-        $('#modal-body-data').html(response);
-        $('#myModal').modal('show');
-      }
-    });
-  });
-});
+						$('#day').text('Pieteiktie: ' + dateString);
+						$.ajax({
+							url: 'backend/get_data.php',
+							type: 'post',
+							data: {
+								date: dateString
+							},
+							success: function (response) {
+								$('#modal-body-data').html(response);
+								$('#myModal').modal('show');
+							}
+						});
+					});
+				});
 
 
 
@@ -242,16 +219,3 @@ $(document).ready(function () {
 </body>
 
 </html>
-
-<!--
-  214:1 Uncaught SyntaxError: Unexpected token '<', "<br />
-<b>"... is not valid JSON
-	at JSON.parse (<anonymous>)
-	at Object.success (sklapa.php:248:27)
-	at c (jquery.js:2:28294)
-	at Object.fireWith [as resolveWith] (jquery.js:2:29039)
-	at l (jquery.js:2:79800)
-	at XMLHttpRequest.<anonymous> (jquery.js:2:82254)
-
-
-	fix this error for ajax
