@@ -28,7 +28,6 @@ if (in_array(explode('.', $domain)[0], $blocked_domains)) {
     $pdo->query("INSERT INTO `skolotajs` ( `vards`, `uzvards`, `epasts`) VALUES ( '" . $_SESSION['username'] . "', '" . $_SESSION['surname'] . "','" . $_SESSION['email'] . "' )");
   }
 }
-
 ?>
 
 
