@@ -28,7 +28,7 @@
 
   <?php
   include('header.php');
-
+  IsTeacher();
 
   $parts = explode('@', $_SESSION['email']);
   $domain = array_pop($parts);
