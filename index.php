@@ -28,7 +28,7 @@
 
   <?php
   include('header.php');
-
+  IsTeacher();
 
   $parts = explode('@', $_SESSION['email']);
   $domain = array_pop($parts);
@@ -111,8 +111,8 @@
               <img src="images/dsds.jpg" alt=""
                 class="u-expanded-width u-image u-image-contain u-image-default u-image-3" data-image-width="626"
                 data-image-height="626">
-              <h4 class="u-text u-text-default u-text-palette-1-base u-text-3">Skolotājiem</h4>
-              <a href="sklapa.php"
+              <h4 class="u-text u-text-default u-text-palette-1-base u-text-3">Informācija</h4>
+              <a href="Info.php"
                 class="u-active-palette-1-base u-border-2 u-border-active-white u-border-hover-white u-border-white u-btn u-btn-round u-button-style u-hover-palette-1-base u-palette-1-base u-radius-50 u-text-active-white u-text-hover-white u-btn-3">
                 ATVĒRT</a>
             </div>
