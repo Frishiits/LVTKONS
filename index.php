@@ -37,9 +37,9 @@
     echo '<meta http-equiv="refresh" content="1; URL=sklapa.php" />';
     exit();
   }
-
-
   ?>
+<!-- Checks if user has sk in in the email when logging in -->
+
   <section class="u-align-center u-clearfix u-gradient u-section-1" id="carousel_1d8f">
     <div class="u-clearfix u-sheet u-sheet-1">
       <div class="u-list u-list-1">

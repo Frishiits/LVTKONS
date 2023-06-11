@@ -88,6 +88,8 @@
               <th class="u-align-center u-border-3 u-border-grey-dark-1 u-table-cell u-table-cell-5">Ceturtdiena</th>
             </tr>
           </thead>
+  <!-- Tabula -->
+
           <tbody class="u-table-alt-grey-5 u-table-body u-white u-table-body-1">
             <?php
             $result = $pdo->query("SELECT *,DAYOFWEEK(laiks) AS day_number,DATE_FORMAT(sākums,'%H:%i') AS laiks_time,DATE_FORMAT(beigas,'%H:%i') AS laiks_time1 FROM `konsultācija`
